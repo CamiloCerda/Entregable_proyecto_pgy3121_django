@@ -1,0 +1,77 @@
+body {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; }
+
+aside {
+  border: none; }
+
+.contenedorNoticia {
+  width: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+  background: url(../img/fondos/white_leather.png);
+  margin-top: 10px; }
+  .contenedorNoticia h2 {
+    font-size: 35px;
+    font-weight: 700;
+    text-align: justify; }
+  .contenedorNoticia .pieTitulo {
+    text-align: justify;
+    font-weight: 500; }
+  .contenedorNoticia .fechaAutor {
+    font-style: italic; }
+  .contenedorNoticia .caja {
+    margin-top: 10px;
+    width: 100%; }
+    .contenedorNoticia .caja .imagen {
+      width: 70%;
+      margin-right: 10px;
+      margin-bottom: 10px;
+      background-color: #1a1a1a;
+      float: left;
+      text-align: justify;
+      padding: 5px; }
+      .contenedorNoticia .caja .imagen img {
+        width: 100%;
+        /* margin-right: 10px;
+        margin-bottom: 10px; */ }
+      .contenedorNoticia .caja .imagen span {
+        color: #ffffff;
+        font-size: 14px;
+        font-style: italic; }
+    .contenedorNoticia .caja p {
+      text-align: justify; }
+    .contenedorNoticia .caja .imagen2 {
+      width: 100%; }
+      .contenedorNoticia .caja .imagen2 .imagen {
+        width: 50%;
+        float: right;
+        margin-left: 10px;
+        margin-bottom: 10px;
+        background-color: #1a1a1a;
+        text-align: justify;
+        padding: 5px; }
+        .contenedorNoticia .caja .imagen2 .imagen img {
+          width: 100%; }
+      .contenedorNoticia .caja .imagen2 p {
+        text-align: justify; }
+
+@media screen and (max-width: 500px) {
+  .contenedorNoticia h2 {
+    font-size: 25px; }
+  .contenedorNoticia .pieTitulo {
+    font-size: 15px; }
+  .contenedorNoticia .caja .imagen {
+    width: 100%;
+    text-align: center;
+    font-size: 12px; }
+  .contenedorNoticia .caja .imagen2 {
+    width: 100%; }
+    .contenedorNoticia .caja .imagen2 .imagen {
+      width: 100%;
+      text-align: center;
+      margin: auto;
+      float: none; }
+    .contenedorNoticia .caja .imagen2 p {
+      margin-top: 12px; } }
+
+/*# sourceMappingURL=estilosNoticias.css.map */

@@ -1,0 +1,218 @@
+body {
+  background: url(../img/fondos/black_denim.png); }
+
+header {
+  width: 100%; }
+  header .container {
+    width: 100%;
+    margin: auto; }
+    header .container nav {
+      width: 100%; }
+
+.alertConfirmacion {
+  display: flex;
+  justify-content: space-between; }
+  .alertConfirmacion a i {
+    color: #4d7a4a; }
+
+.cajaModificarImg .row {
+  margin: 20px 0;
+  padding-bottom: 5px;
+  border-bottom: 2px solid #bebebe; }
+  .cajaModificarImg .row .contenedor {
+    display: flex;
+    justify-content: space-between; }
+    .cajaModificarImg .row .contenedor h3 {
+      color: #bebebe; }
+
+.contenedorModificarImg {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 20px; }
+  .contenedorModificarImg .cajaImg {
+    width: 29%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    margin: 20px;
+    border: 1px solid #bebebe;
+    border-radius: 5px; }
+    .contenedorModificarImg .cajaImg img {
+      width: 80%; }
+
+main {
+  width: 100%; }
+  main .cajaAgregImg h1 {
+    margin-top: 20px; }
+  main .cajaAgregImg h1, main .cajaAgregImg h3 {
+    color: #bebebe; }
+  main .cajaAgregImg h3 {
+    text-decoration: underline; }
+  main .cajaAgregImg .cajaImagenesAgregImgs {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    border: 1px solid #bebebe;
+    border-radius: 5px;
+    box-sizing: border-box;
+    padding: 20px;
+    margin: 50px 0; }
+    main .cajaAgregImg .cajaImagenesAgregImgs .cajaImg {
+      width: 33%;
+      display: flex;
+      justify-content: center;
+      margin: 20px 0; }
+      main .cajaAgregImg .cajaImagenesAgregImgs .cajaImg img {
+        width: 70%;
+        margin: auto; }
+  main .formularioAgregarJugadores h2, main .formularioAgregarJugadores h4 {
+    color: #bebebe; }
+  main .nuevoJugador {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; }
+    main .nuevoJugador a {
+      display: inline-block;
+      margin: 20px 20px 50px 0;
+      font-size: 25px;
+      color: #bebebe;
+      text-decoration: none; }
+      main .nuevoJugador a:hover {
+        transition: all 0.2s ease;
+        opacity: .7; }
+    main .nuevoJugador i {
+      color: #bebebe;
+      font-size: 25px;
+      margin-bottom: 20px; }
+  main .jugadores {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap; }
+    main .jugadores .cajaJugador {
+      width: 30%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin: 30px 10px; }
+      main .jugadores .cajaJugador .cajaNombre {
+        width: 100%;
+        display: flex;
+        justify-content: center; }
+        main .jugadores .cajaJugador .cajaNombre h3 {
+          color: #bebebe; }
+      main .jugadores .cajaJugador .cajaEnlaces {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center; }
+        main .jugadores .cajaJugador .cajaEnlaces .fila2 {
+          margin: 10px 0; }
+        main .jugadores .cajaJugador .cajaEnlaces a {
+          color: #ffffff;
+          text-decoration: none; }
+          main .jugadores .cajaJugador .cajaEnlaces a:hover {
+            transition: all 0.2s ease;
+            opacity: .7; }
+  main .colorPrimario {
+    color: #bebebe; }
+
+@media screen and (max-width: 768px) {
+  .contenedorModificarImg {
+    padding: 5px; }
+    .contenedorModificarImg .cajaImg {
+      width: 40%;
+      padding: 10px;
+      margin: 10px; }
+      .contenedorModificarImg .cajaImg img {
+        width: 90%; }
+
+  main .cajaAgregImg .cajaImagenesAgregImgs {
+    padding: 10px; }
+    main .cajaAgregImg .cajaImagenesAgregImgs .cajaImg {
+      width: 50%;
+      margin: 10px 0; }
+      main .cajaAgregImg .cajaImagenesAgregImgs .cajaImg img {
+        width: 80%; }
+  main .jugadores .cajaJugador .cajaNombre h3 {
+    font-size: 22px; }
+  main .jugadores .cajaJugador .cajaEnlaces {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; }
+    main .jugadores .cajaJugador .cajaEnlaces .fila1 {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center; }
+      main .jugadores .cajaJugador .cajaEnlaces .fila1 button {
+        margin-bottom: 10px;
+        width: 100%; }
+    main .jugadores .cajaJugador .cajaEnlaces .fila2 {
+      margin-top: 0; } }
+@media screen and (max-width: 502px) {
+  .contenedorModificarImg .cajaImg {
+    width: 100%;
+    padding: 20px;
+    margin: 10px; }
+    .contenedorModificarImg .cajaImg img {
+      width: 100%;
+      margin-bottom: 10px; }
+
+  main .cajaAgregImg .cajaImagenesAgregImgs {
+    padding: 10px; }
+    main .cajaAgregImg .cajaImagenesAgregImgs .cajaImg {
+      width: 100%;
+      margin: 10px 0; }
+      main .cajaAgregImg .cajaImagenesAgregImgs .cajaImg img {
+        width: 80%; }
+  main .nuevoJugador a {
+    margin: 20px 10px;
+    font-size: 20px;
+    text-decoration: underline; }
+  main .nuevoJugador i {
+    margin-bottom: 0; }
+  main .jugadores .cajaJugador {
+    width: 60%;
+    margin: 20px auto; }
+    main .jugadores .cajaJugador .cajaImg {
+      width: 100%; }
+      main .jugadores .cajaJugador .cajaImg img {
+        width: 100%; }
+    main .jugadores .cajaJugador .cajaNombre h3 {
+      font-size: 25px; }
+    main .jugadores .cajaJugador .cajaEnlaces {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center; }
+      main .jugadores .cajaJugador .cajaEnlaces .fila1 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center; }
+        main .jugadores .cajaJugador .cajaEnlaces .fila1 button {
+          margin-bottom: 10px;
+          width: 100%; }
+      main .jugadores .cajaJugador .cajaEnlaces .fila2 {
+        margin-top: 0; } }
+@media screen and (max-width: 350px) {
+  main .jugadores .cajaJugador {
+    width: 90%;
+    margin: 20px auto; }
+    main .jugadores .cajaJugador .cajaImg {
+      width: 100%; }
+      main .jugadores .cajaJugador .cajaImg img {
+        width: 100%; }
+    main .jugadores .cajaJugador .cajaNombre h3 {
+      font-size: 20px;
+      margin: 10px 0; } }
+
+/*# sourceMappingURL=estilosAdmin.css.map */

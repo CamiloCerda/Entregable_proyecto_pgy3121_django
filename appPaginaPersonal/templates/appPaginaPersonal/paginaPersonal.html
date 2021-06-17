@@ -1,0 +1,85 @@
+{% extends 'appCore/base.html' %}
+
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'appGaleria/sass/paginaPersonal.css' %}">
+{% endblock %}
+
+{% block title %}
+    Pagina Personal ASS
+{% endblock %}
+
+{% block main %}
+
+
+<main class="container">
+    <div class="row mt-5 cajaJugador rounded">
+        <div class="col-12 col-md-6 contenedorFoto">             
+            <img src="{{ jugador.imagenPortada.url }}" alt="Imagen portada jugador Asociacion Santiago sur">
+        </div>
+        <div class="col-12 col-md-6  d-flex flex-column justify-content-center align-items-center">
+            <div class="nombre">
+                <h3>{{ jugador.pnombre }}</h3>
+                <h2>{{ jugador.apaterno }}</h2>
+            </div>
+        </div>
+    </div>
+    <div class="row contenido mt-5">
+        <div class="col-12 col-md-5 rounded">
+            <h3>Trayectoria</h3>
+            <h4>Pre-Infantil</h4>
+            <p>{{ jugador.preInf }}</p>
+            <h4>Infantil</h4>
+            <p>{{ jugador.inf }}</p>
+            <h4>Juvenil</h4>
+            <p>{{ jugador.juvenil }}</p>
+            <h4>T.C.</h4>
+            <p>{{ jugador.tc }}</p>
+        </div>
+        <div class="col-12 col-md-2">
+            <i class="fas fa-table-tennis"></i>
+            <h3>A.S.S.</h3>
+        </div>
+        <div class="col-12 mt-2 mt-md-0 col-md-5 rounded">
+            <h3>Datos Personales</h3>
+            <h4>Nombre completo</h4>
+            <p>{{ jugador.pnombre }} {{ jugador.snombre }} {{ jugador.apaterno }} {{ jugador.amaterno }}</p>
+            <h4>Lugar de nacimiento</h4>
+            <p>{{ jugador.nacimiento }}</p>
+            <h4>Fecha de nacimiento</h4>
+            <p>{{ jugador.fechaNacimiento }}</p>
+            <h4>Estilo</h4>
+            <p>{{ jugador.estilo }}</p>
+        </div>
+    </div>
+    <div class="row mt-5">
+        <div class="contenedorImagenesPagPersonal">
+            <div class="titulo">
+                <p>Galería</p>
+            </div>
+
+            <div class="imagenes">
+                <div class="sliderPaginaPersonal rounded">
+                    {% for img in imgs %}
+                    <div class="caja">
+                        <img src="{{ img.imagenJug.url }}" alt="{{ img.alt }}" title="{{ img.title }}">
+                    </div> 
+                    {% endfor %}
+                </div> 
+                <div class="flechas mt-4 d-flex justify-content-around">
+                    <div class="caja">
+                        <i class="fas fa-chevron-left" id="btnIzq"></i>
+                    </div>
+                    <div class="caja">
+                        <i class="fas fa-chevron-right" id="btnDer"></i>
+                    </div>
+                </div>
+            </div>
+            <script src="{% static 'appPaginaPersonal/js/sliderPaginaPersonalJugadores.js' %}"></script>
+        </div>
+    </div>
+</main>
+
+
+{% endblock %}

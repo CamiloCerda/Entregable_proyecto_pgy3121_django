@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords"
+        content="Asociacion Santiago Sur, tenis de mesa, tenis de mesa chile, pingpong, san ramon, tenis de mesa san ramon">
+    <meta name="description"
+        content="Pagina de la Asociación de tenis de mesa Santiago Sur, ubicada en la comuna de San Ramon, región Metropolitana">
+    <meta name="author" content="Camilo Cerda Vasquez">
+    <title>Asociación Santiago Sur - Inicio</title>
+    <link rel="stylesheet" href="{% static 'appCore/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'appCore/sass/inicio.css' %}">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/0dbe242cdd.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+    <header class="d-flex justify-content-center align-items-center mt-5 titulo">
+        <i class="fas fa-table-tennis d-none d-sm-flex"></i>
+        <h1 class="d-none d-sm-flex">Asociación de tenis de mesa Santiago Sur</h1><i
+            class="fas fa-table-tennis d-none d-sm-flex"></i>
+        <i class="fas fa-table-tennis d-flex d-sm-none"></i>
+        <h1 class="d-flex d-sm-none">A Stgo Sur</h1><i class="fas fa-table-tennis d-flex d-sm-none"></i>
+    </header>
+    <main>
+        <div class="sliderInicial mt-5">
+            <div id="imagenesmotivacionales" class="carousel slide carousel-fade" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active pro" data-bs-interval="3000">
+                        <img src="{% static 'appCore/img/slider_inicio/f3.jpg' %}" class="d-block w-100 m-auto rounded"
+                            alt="Kasumi Ichikawa golpeando un revés">
+                    </div>
+                    <div class="carousel-item pro" data-bs-interval="3000">
+                        <img src="{% static 'appCore/img/slider_inicio/f2.jpg' %}" class="d-block w-100 m-auto rounded"
+                            alt="Ma Long golpeando un revés">
+                    </div>
+                    <div class="carousel-item pro" data-bs-interval="3000">
+                        <img src="{% static 'appCore/img/slider_inicio/f1.jpg' %}" class="d-block w-100 m-auto rounded"
+                            alt="Zhang Jike golpeando un derecho">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <form class="formuInicio col-12" method="POST">
+            {% csrf_token %}
+            <div class="mb-3 d-flex flex-column">
+                <label for="userName" class="form-label">Nombre de usuario</label>
+                 <input type="text" class="form-control nombreusuario" id="userName" placeholder="Nombre de usuario..." {{form.username}}> 
+                
+            </div>
+            <div class="mb-3 row">
+                <label for="inputPassword" class=" col-form-label">Contraseña</label>
+                
+                 <div class=""> 
+                     <input type="password" class="form-control" id="inputPassword" placeholder="Contraseña..." {{form.password}}> 
+                 </div> 
+            </div>
+            <div class="opciones d-flex flex-column flex-lg-row justify-content-around mt-5">
+                <button type="submit" class="mt-2 mx-md-1 btn btn-outline-primary ingresar">Ingresar</button>
+                <button type="button" class="mt-2 mx-md-1 btn btn-outline-danger" data-bs-toggle="modal"
+                    data-bs-target="#registroModal">Registrarse</button>
+                    
+                <a class="mt-2 mx-md-1 btn btn-outline-success acceder" href="{% url 'home' %}">Invitado</a>
+            </div>
+        
+            <div class="modal fade" id="registroModal" tabindex="-1" aria-labelledby="registroModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="registroModalLabel">¡Regístrate y obtén información actualizada!
+                            </h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col">
+                                        <div class="row">
+                                            <div class="mb-3 col-12 col-md-6">
+                                                <label for="FormControlNombre"
+                                                    class="form-label text-secondary">Nombre</label>
+                                                <input type="text" class="form-control" id="FormControlNombre"
+                                                    placeholder="Nombre...">
+                                            </div>
+                                            <div class="mb-3 col-12 col-md-6">
+                                                <label for="FormControlApellido"
+                                                    class="form-label text-secondary">Apellido</label>
+                                                <input type="text" class="form-control" id="FormControlApellido"
+                                                    placeholder="Apellido...">
+                                            </div>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="mailUsuario" class="form-label text-secondary">Tu correo
+                                                electrónico</label>
+                                            <input type="email" class="form-control" id="mailUsuario"
+                                                placeholder="nombre@mail.com">
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="interesesUsuario" class="form-label text-secondary">Interés.
+                                                Cuéntanos algo de ti:</label>
+                                            <textarea class="form-control" id="interesesUsuario" rows="3"></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                            <button type="button" class="btn btn-primary">Enviar registro</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Modal -->
+        </form>
+    </main>
+    <!-- <audio src="multimedia/sonidos/sonidopingpong.mp4" class="sonidopingpong"></audio> -->
+    <script src="{% static 'appCore/js/jquery-3.5.1.min.js' %}"></script>
+    <script src="{% static 'appCore/js/popper.min.js' %}"></script>
+    <script src="{% static 'appCore/js/bootstrap.min.js' %}"></script>
+    <!-- <script src="{% static 'appCore/js/javascript/inicio.js' %}"></script> -->
+</body>
+
+</html>

@@ -1,0 +1,218 @@
+body {
+  background: url(../img/fondos/black_denim.png); }
+
+header .tituloHeader {
+  font-family: 'Dancing Script';
+  color: #000000;
+  background-color: #ffffff;
+  justify-content: center; }
+  header .tituloHeader i {
+    margin: 0 20px;
+    font-size: 30px; }
+header .usuario {
+  background-color: #ffffff;
+  font-family: 'Dancing Script';
+  display: flex;
+  justify-content: center;
+  align-content: center; }
+  header .usuario h3, header .usuario i {
+    font-size: 20px; }
+  header .usuario i {
+    margin-left: 10px; }
+header nav .container-fluid .navbar-collapse .navbar-nav .nav-item {
+  margin-right: 25px; }
+  header nav .container-fluid .navbar-collapse .navbar-nav .nav-item a i {
+    padding-right: 10px; }
+
+main .cajaJugador {
+  background-color: #ffffff;
+  padding: 20px 5px;
+  width: 70%;
+  margin: auto; }
+  main .cajaJugador .contenedorFoto img {
+    display: block;
+    margin: auto;
+    width: 80%; }
+  main .cajaJugador .nombre {
+    font-family: 'Train One'; }
+    main .cajaJugador .nombre h3 {
+      font-size: 50px; }
+    main .cajaJugador .nombre h2 {
+      font-size: 70px; }
+main .contenido .col-md-5 {
+  background-color: #ffffff;
+  padding: 20px; }
+  main .contenido .col-md-5 h3 {
+    font-size: 20px;
+    padding-bottom: 5px;
+    border-bottom: 2px solid #a3a300; }
+main .contenido .col-md-2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #ffffff; }
+  main .contenido .col-md-2 i {
+    margin: 20px 0;
+    font-size: 50px; }
+  main .contenido .col-md-2 h3 {
+    font-family: 'Dancing Script'; }
+main .contenedorImagenesPagPersonal {
+  display: flex;
+  flex-direction: column;
+  width: 100%; }
+  main .contenedorImagenesPagPersonal .titulo {
+    padding: 20px; }
+    main .contenedorImagenesPagPersonal .titulo p {
+      font-size: 2.5em;
+      color: #ffffff;
+      font-family: 'Dancing Script';
+      padding-bottom: 10px;
+      border-bottom: 2px solid #ffffff; }
+  main .contenedorImagenesPagPersonal .imagenes {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 10px auto 200px; }
+    main .contenedorImagenesPagPersonal .imagenes .flechas {
+      width: 5%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #ffffff; }
+      main .contenedorImagenesPagPersonal .imagenes .flechas i {
+        font-size: 2em;
+        padding: 20px; }
+        main .contenedorImagenesPagPersonal .imagenes .flechas i:hover {
+          cursor: pointer; }
+      main .contenedorImagenesPagPersonal .imagenes .flechas.der {
+        flex-direction: row-reverse; }
+    main .contenedorImagenesPagPersonal .imagenes .sliderPaginaPersonal {
+      display: flex;
+      width: 100%;
+      background-color: #ffffff;
+      overflow: hidden;
+      padding: 20px; }
+      main .contenedorImagenesPagPersonal .imagenes .sliderPaginaPersonal .caja {
+        padding: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: all 1s ease; }
+        main .contenedorImagenesPagPersonal .imagenes .sliderPaginaPersonal .caja img {
+          vertical-align: bottom;
+          opacity: .6;
+          border: 2px solid black;
+          border-radius: 5px;
+          box-shadow: 8px 8px 20px #0a0a0a;
+          transition: all .4s ease;
+          width: 220px;
+          height: 281px; }
+          main .contenedorImagenesPagPersonal .imagenes .sliderPaginaPersonal .caja img:hover {
+            opacity: 1;
+            box-shadow: 8px 8px 50px #030303; }
+
+footer .iconos {
+  padding: 50px 0; }
+  footer .iconos a i {
+    font-size: 30px;
+    color: #fafafa; }
+footer .descripcion {
+  text-align: justify; }
+  footer .descripcion h3 {
+    font-size: 16px;
+    font-weight: 400;
+    color: #ffffff; }
+footer .gris {
+  color: #ffffff;
+  margin-bottom: 15px;
+  margin-top: 15px; }
+footer .logos {
+  display: flex;
+  justify-content: center; }
+  footer .logos a img {
+    padding-top: 50px;
+    width: 100%; }
+footer .ubicacion {
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 400;
+  margin: 20px 0; }
+footer .frase {
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 400;
+  margin: 40px 0;
+  text-align: center; }
+footer iframe {
+  margin-bottom: 20px;
+  width: 80%;
+  margin: 0 auto;
+  border-radius: 5px; }
+
+@media screen and (max-width: 800px) {
+  main .contenedorImagenesPagPersonal .imagenes .sliderPaginaPersonal {
+    padding: 0; }
+    main .contenedorImagenesPagPersonal .imagenes .sliderPaginaPersonal .caja {
+      padding: 0; }
+      main .contenedorImagenesPagPersonal .imagenes .sliderPaginaPersonal .caja img {
+        width: 200px;
+        height: 256px;
+        margin: 10px;
+        opacity: 1; } }
+@media screen and (max-width: 600px) {
+  header .usuario h3, header .usuario i {
+    font-size: 16px; }
+
+  main .cajaJugador {
+    width: 90%; }
+    main .cajaJugador .contenedorFoto img {
+      width: 90%; }
+    main .cajaJugador .nombre {
+      padding-top: 10px; }
+      main .cajaJugador .nombre h3 {
+        font-size: 25px; }
+      main .cajaJugador .nombre h2 {
+        font-size: 50px; }
+  main .contenido {
+    padding: 10px; }
+    main .contenido .col-md-5 {
+      margin: auto; }
+  main .contenedorImagenesPagPersonal .imagenes .sliderPaginaPersonal {
+    padding: 0; }
+    main .contenedorImagenesPagPersonal .imagenes .sliderPaginaPersonal .caja {
+      padding: 0; }
+      main .contenedorImagenesPagPersonal .imagenes .sliderPaginaPersonal .caja img {
+        width: 180px;
+        height: 231px;
+        margin: 10px; } }
+@media screen and (max-width: 400px) {
+  main .contenedorImagenesPagPersonal .imagenes .sliderPaginaPersonal {
+    padding: 0; }
+    main .contenedorImagenesPagPersonal .imagenes .sliderPaginaPersonal .caja {
+      padding: 0; }
+      main .contenedorImagenesPagPersonal .imagenes .sliderPaginaPersonal .caja img {
+        width: 200px;
+        height: 256px;
+        margin: 5px; } }
+@media screen and (max-width: 300px) {
+  main .cajaJugador {
+    width: 100%; }
+    main .cajaJugador .contenedorFoto img {
+      width: 100%; }
+    main .cajaJugador .nombre h3 {
+      font-size: 15px; }
+    main .cajaJugador .nombre h2 {
+      font-size: 30px; }
+  main .contenedorImagenesPagPersonal .imagenes .sliderPaginaPersonal {
+    padding: 0; }
+    main .contenedorImagenesPagPersonal .imagenes .sliderPaginaPersonal .caja {
+      padding: 0; }
+      main .contenedorImagenesPagPersonal .imagenes .sliderPaginaPersonal .caja img {
+        width: 200px;
+        height: 256px;
+        margin: 10px; } }
+
+/*# sourceMappingURL=paginaPersonal.css.map */

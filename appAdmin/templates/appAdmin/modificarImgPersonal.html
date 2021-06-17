@@ -1,0 +1,67 @@
+{% extends 'appAdmin/baseAdmin.html' %}
+
+{% load static %}
+
+{% block pagina %}
+Modificar imagenes
+{% endblock %}
+
+{% block main %}
+<main class="container contenedorModificarImg">
+    {% for img in imagenes %}
+    <div class="cajaImg">
+        <img src="{{img.imagenJug.url}}" alt="">
+        <form enctype="multipart/form-data" action="" method="post">
+            {% csrf_token %}
+            <div class="mb-3">
+                <label for="alt" class="form-label colorPrimario" aria-describedby="altHelp">ALT de la imagen
+                    (*)</label>
+                <input type="text" class="form-control" id="alt" name="alt" value="{{img.alt}}">
+                <div id="altHelp" class="form-text">Lo que escribas arriba será una descripción que aparecerá cuando por
+                    algún error no se muestre la imagen</div>
+            </div>
+            <div class="mb-3">
+                <label for="title" class="form-label colorPrimario" aria-describedby="titleHelp">Descripcion de la
+                    imagen (*)</label>
+                <input type="text" class="form-control" id="title" name="title" value="{{img.title}}">
+                <div id="titleHelp" class="form-text">Lo que escribas arriba será una descripción que aparecerá cuando
+                    pases con el mouse por encima de la foto</div>
+            </div>
+            <div class="mb-3">
+                <input type="text" class="form-control" id="fkJugador" name="fkJugador" value="{{pk}}"
+                    style="display: none;">
+            </div>
+            <div class="mb-3">
+                <input type="text" class="form-control" id="idImagenJug" name="idImagenJug" value="{{img.idImagenJug}}"
+                    style="display: none;">
+            </div>
+            <!-- Button trigger modal -->
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                data-bs-target="#modalAgregarImgs{{img.idImagenJug}}">
+                Modificar
+            </button>
+            <!-- Modal -->
+            <div class="modal fade" id="modalAgregarImgs{{img.idImagenJug}}" tabindex="-1"
+                aria-labelledby="labelmodalAgregarImgs{{img.idImagenJug}}" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="labelmodalAgregarImgs{{img.idImagenJug}}">Confirmación de datos
+                            </h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            Vas a modificar el contenido de la imagen
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No, cerrar</button>
+                            <button type="submit" class="btn btn-primary">Sí, modificar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+    {% endfor %}
+</main>
+{% endblock %}

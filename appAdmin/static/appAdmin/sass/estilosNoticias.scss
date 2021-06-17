@@ -1,0 +1,104 @@
+body {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+aside {
+    border: none;
+}
+.contenedorNoticia {
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+    //background-color: aliceblue;
+    background: url(../img/fondos/white_leather.png);
+    margin-top: 10px;
+    h2 {
+        font-size: 35px;
+        font-weight: 700;
+        text-align: justify;
+    }
+    .pieTitulo {
+        text-align: justify;
+        font-weight: 500;
+    }
+    .fechaAutor {
+        font-style: italic;
+    }
+    .caja {
+        margin-top: 10px;
+        width: 100%;
+        //display: flex;
+        .imagen {
+            width: 70%;
+            margin-right: 10px;
+            margin-bottom: 10px;
+            background-color: #1a1a1a;
+            float: left;
+            text-align: justify;
+            padding: 5px;
+            img {
+                width: 100%;
+                /* margin-right: 10px;
+                margin-bottom: 10px; */
+            }
+            span {
+                color: #ffffff;
+                font-size: 14px;
+                font-style: italic;
+            }
+        }
+        p {
+            text-align: justify;
+        }
+        .imagen2 {
+            width: 100%;
+            //padding: 0;
+            .imagen {
+                width: 50%;
+                float: right;
+                margin-left: 10px;
+                margin-bottom: 10px;
+                background-color: #1a1a1a;
+                text-align: justify;
+                padding: 5px;
+                img {
+                    width: 100%;
+                }
+            }
+            p {
+                text-align: justify;
+            }
+        }
+    }
+}
+
+@media screen and (max-width:500px) {
+    .contenedorNoticia {
+        h2 {
+            font-size: 25px;
+        }
+        .pieTitulo {
+            font-size: 15px;
+        }  
+        .caja {
+            .imagen {
+                width: 100%;
+                text-align: center;
+                font-size: 12px;
+            }
+            .imagen2 {
+                width: 100%;
+                
+                //padding: 0;
+                .imagen {
+                    width: 100%;
+                    text-align: center;
+                    margin: auto;
+                    float: none;
+                }
+                p {
+                    margin-top: 12px;
+                }
+            }
+        }
+    }
+}

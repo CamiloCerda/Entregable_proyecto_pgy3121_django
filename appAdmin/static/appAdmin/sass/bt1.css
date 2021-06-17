@@ -1,0 +1,413 @@
+body {
+  background: url(../img/fondos/black_denim.png);
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; }
+
+header .tituloHeader {
+  font-family: 'Dancing Script';
+  color: #000000;
+  background-color: #ffffff;
+  justify-content: center; }
+  header .tituloHeader i {
+    margin: 0 20px;
+    font-size: 30px; }
+header .usuario {
+  background-color: #ffffff;
+  font-family: 'Dancing Script';
+  display: flex;
+  justify-content: center;
+  align-content: center; }
+  header .usuario h3, header .usuario i {
+    font-size: 20px; }
+  header .usuario i {
+    margin-left: 10px; }
+header nav .container-fluid .navbar-brand {
+  width: 50px; }
+header nav .container-fluid .navbar-collapse .navbar-nav .nav-item {
+  margin-right: 25px; }
+  header nav .container-fluid .navbar-collapse .navbar-nav .nav-item a i {
+    padding-right: 10px; }
+
+.fas, .titulo {
+  font-size: 1em; }
+
+.italica {
+  font-style: italic; }
+
+.caruselFotos {
+  background: url(../img/fondos/white_leather.png);
+  border-radius: 10px;
+  padding: 20px;
+  /* font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; */ }
+
+main .cajaRedes {
+  background: url(../img/fondos/white_leather.png);
+  margin: 20px 0;
+  padding: 20px;
+  border-radius: 10px; }
+  main .cajaRedes .cajarrss {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    color: #3b3b3b; }
+    main .cajaRedes .cajarrss h2 {
+      font-style: italic; }
+    main .cajaRedes .cajarrss i {
+      margin-left: 10px;
+      font-size: 30px; }
+  main .cajaRedes .iconos {
+    padding: 50px 0; }
+    main .cajaRedes .iconos a i {
+      font-size: 30px;
+      color: #3b3b3b; }
+main .noticiaPrincipal {
+  background: url(../img/fondos/black_denim.png);
+  border: 1px solid #ffffff; }
+  main .noticiaPrincipal .probando h5 {
+    padding-bottom: 5px;
+    border-bottom: 2px solid #620001; }
+main .tresnoticias .card {
+  background: url(../img/fondos/white_leather.png); }
+  main .tresnoticias .card.oscura {
+    background: url(../img/fondos/black_denim.png);
+    border: 1px solid #bebebe;
+    color: #ffffff; }
+    main .tresnoticias .card.oscura .card-body h5 {
+      padding-bottom: 5px;
+      border-bottom: 2px solid #ffffff; }
+  main .tresnoticias .card .card-body {
+    color: #252525; }
+    main .tresnoticias .card .card-body h5 {
+      padding-bottom: 5px;
+      border-bottom: 2px solid #131313; }
+main .dosnoticias .card .card-body h5 {
+  padding-bottom: 5px;
+  border-bottom: 2px solid #413c8b; }
+
+aside {
+  border: 1px solid #dadada; }
+  aside .cardClima .card-body .titulo i {
+    margin: 0 10px;
+    font-size: 23px;
+    text-align: center; }
+  aside .cardClima .card-body .titulo h5 {
+    font-size: 16px;
+    text-align: center; }
+  aside .cardClima .card-body .cajaImagenClima {
+    display: none; }
+    aside .cardClima .card-body .cajaImagenClima .cajaImagen {
+      border-radius: 10px;
+      margin: 10px 0; }
+      aside .cardClima .card-body .cajaImagenClima .cajaImagen img {
+        width: 70%;
+        margin: auto; }
+    aside .cardClima .card-body .cajaImagenClima p {
+      text-align: center;
+      color: #f3f3f3;
+      font-weight: 500;
+      font-style: italic; }
+  aside .cardClima .card-body .cajaImagenPorDefecto {
+    text-align: center; }
+    aside .cardClima .card-body .cajaImagenPorDefecto i {
+      font-size: 50px;
+      margin: 20px 0; }
+    aside .cardClima .card-body .cajaImagenPorDefecto p {
+      text-align: center;
+      color: #f3f3f3;
+      font-weight: 500;
+      font-style: italic; }
+  aside .ranking {
+    background-color: #dadada;
+    margin: 10px auto;
+    padding: 20px; }
+    aside .ranking h4 {
+      font-size: 17px;
+      font-weight: 500; }
+    aside .ranking ol li {
+      border-bottom: 1px solid #bebebe; }
+  aside .colorFondo {
+    background: url(../img/fondos/white_leather.png); }
+  aside .jugmes {
+    background: url(../img/fondos/white_leather.png);
+    color: #3b3b3b; }
+    aside .jugmes .titulo i {
+      margin: 0 10px;
+      font-size: 16px;
+      text-align: center; }
+    aside .jugmes .titulo h5 {
+      font-size: 16px;
+      text-align: center; }
+    aside .jugmes p, aside .jugmes a {
+      color: #3b3b3b; }
+    aside .jugmes p {
+      text-align: justify; }
+    aside .jugmes a:hover {
+      color: #000000;
+      transition: all .5s ease; }
+
+.bordedivisor {
+  padding-bottom: 20px;
+  border-bottom: 1px solid #b4b4b4; }
+
+.contenedor {
+  background: url(../img/fondos/black_denim.png); }
+  .contenedor .sliderJugadores {
+    width: 96%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around; }
+    .contenedor .sliderJugadores .titulo {
+      align-self: flex-start;
+      margin-top: 50px; }
+      .contenedor .sliderJugadores .titulo h3 {
+        color: #f3f3f3;
+        padding: 0 20px;
+        display: inline-block; }
+      .contenedor .sliderJugadores .titulo i {
+        color: #f3f3f3;
+        font-size: 2em; }
+    .contenedor .sliderJugadores .subContenedor {
+      width: 89%;
+      margin: 20px auto 40px auto;
+      display: flex;
+      overflow: hidden; }
+      .contenedor .sliderJugadores .subContenedor .jugador {
+        padding: 5px;
+        transition: all 1s ease;
+        /* &:hover {
+            opacity: 1;
+        } */ }
+        .contenedor .sliderJugadores .subContenedor .jugador .descripcion {
+          text-align: center;
+          background-color: #ffffff; }
+          .contenedor .sliderJugadores .subContenedor .jugador .descripcion a {
+            color: #727171;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 18px; }
+            .contenedor .sliderJugadores .subContenedor .jugador .descripcion a:hover {
+              transition: color .3s ease;
+              color: #161616; }
+            .contenedor .sliderJugadores .subContenedor .jugador .descripcion a:active {
+              text-decoration: underline; }
+    .contenedor .sliderJugadores .flechas {
+      display: flex; }
+      .contenedor .sliderJugadores .flechas .caja i {
+        font-size: 2.5em;
+        color: #dddddd;
+        margin-bottom: 50px; }
+        .contenedor .sliderJugadores .flechas .caja i.fa-chevron-left {
+          margin-right: 20px; }
+        .contenedor .sliderJugadores .flechas .caja i.fa-chevron-right {
+          margin-left: 20px; }
+        .contenedor .sliderJugadores .flechas .caja i:hover {
+          cursor: pointer; }
+        .contenedor .sliderJugadores .flechas .caja i:active {
+          opacity: .7; }
+
+.contenedorFormulario {
+  background: url(../img/fondos/white_leather.png); }
+
+.tituloFormulario h1 {
+  padding-top: 50px;
+  text-align: center; }
+
+.razonesContacto p {
+  text-align: center;
+  padding-top: 20px; }
+.razonesContacto ul {
+  font-style: italic;
+  list-style: none;
+  list-style: inside; }
+  .razonesContacto ul li {
+    font-size: 15px; }
+  .razonesContacto ul.destacar {
+    font-size: 18px; }
+
+/* aca estamos en el formulario */
+.fondoRojo {
+  transition: all 0.4s ease;
+  background-color: #e95f64;
+  border: 2px solid #ff2828; }
+
+.formularioContacto {
+  background-color: #dadada;
+  padding: 20px;
+  border-radius: 10px;
+  width: 90%;
+  margin: auto; }
+  .formularioContacto .cajaError {
+    height: 16px; }
+    .formularioContacto .cajaError p {
+      padding-top: 3px;
+      padding-bottom: 2px;
+      color: #960409;
+      font-weight: 600;
+      display: none; }
+  .formularioContacto .camposextras {
+    display: flex;
+    flex-wrap: wrap; }
+    .formularioContacto .camposextras .cajaTelefono {
+      width: 33%;
+      padding: 10px; }
+      .formularioContacto .camposextras .cajaTelefono .numTelefono {
+        width: 100%; }
+        .formularioContacto .camposextras .cajaTelefono .numTelefono .codigo {
+          width: 20%; }
+        .formularioContacto .camposextras .cajaTelefono .numTelefono .telefono {
+          width: 80%; }
+    .formularioContacto .camposextras .cajaRegion {
+      padding: 10px;
+      width: 33%; }
+    .formularioContacto .camposextras .cajaRutPasap {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 10px;
+      width: 33%; }
+      .formularioContacto .camposextras .cajaRutPasap .texto {
+        align-self: start; }
+      .formularioContacto .camposextras .cajaRutPasap .radioRutPasap {
+        margin: auto; }
+  .formularioContacto .filtros {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 20px 0; }
+    .formularioContacto .filtros .tipoMensaje .descripcion h5 {
+      font-size: 16px;
+      text-align: center; }
+    .formularioContacto .filtros .tipoMensaje .radioTipoMensaje {
+      width: 90%;
+      margin: auto; }
+    .formularioContacto .filtros .terminosycondiciones {
+      display: flex;
+      flex-direction: column;
+      align-items: center; }
+  .formularioContacto .cajaBtn {
+    display: flex;
+    justify-content: center; }
+    .formularioContacto .cajaBtn button {
+      width: 80%;
+      margin: 0 10px; }
+      .formularioContacto .cajaBtn button span {
+        font-size: 19px;
+        padding: 10px; }
+  .formularioContacto .alertPreventDefault {
+    display: none; }
+
+footer {
+  background: url(../img/fondos/black_denim.png); }
+  footer .iconos {
+    padding: 40px 0; }
+    footer .iconos a i {
+      font-size: 30px;
+      color: #fafafa; }
+  footer .descripcion {
+    text-align: justify; }
+    footer .descripcion h3 {
+      font-size: 16px;
+      font-weight: 400;
+      color: #ffffff; }
+  footer .gris {
+    color: #ffffff;
+    margin-bottom: 15px;
+    margin-top: 15px; }
+  footer .logos {
+    display: flex;
+    justify-content: center; }
+    footer .logos a img {
+      padding-top: 50px;
+      width: 100%; }
+  footer .ubicacion {
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 400;
+    margin: 20px 0; }
+  footer .frase {
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 400;
+    margin: 40px 0;
+    text-align: center; }
+  footer iframe {
+    margin-bottom: 20px;
+    width: 80%;
+    margin: 0 auto;
+    border-radius: 5px; }
+
+@media screen and (max-width: 768px) {
+  header .usuario {
+    padding-top: 10px; }
+    header .usuario h3, header .usuario i {
+      font-size: 17px; }
+
+  .caruselFotos {
+    border-radius: 0;
+    padding: 2px; }
+
+  main .tresnoticias .card.clara {
+    background: url(../img/fondos/white_leather.png); }
+  main .tresnoticias .card.oscura {
+    background: url(../img/fondos/black_denim.png);
+    border: 1px solid #929292; }
+    main .tresnoticias .card.oscura .card-body h5 {
+      border-bottom: 2px solid #413c8b; }
+  main .tresnoticias .card .card-body {
+    color: #333333; }
+    main .tresnoticias .card .card-body h5 {
+      border-bottom: 2px solid #333333; }
+
+  .formularioContacto .camposextras .cajaTelefono {
+    width: 50%; }
+    .formularioContacto .camposextras .cajaTelefono .numTelefono .codigo {
+      width: 30%; }
+    .formularioContacto .camposextras .cajaTelefono .numTelefono .telefono {
+      width: 70%; }
+  .formularioContacto .camposextras .cajaRegion {
+    width: 50%; }
+  .formularioContacto .camposextras .cajaRutPasap {
+    width: 100%; }
+  .formularioContacto .filtros .tipoMensaje .radioTipoMensaje {
+    display: flex;
+    flex-direction: column;
+    align-items: center; }
+    .formularioContacto .filtros .tipoMensaje .radioTipoMensaje input, .formularioContacto .filtros .tipoMensaje .radioTipoMensaje label {
+      width: 100%; }
+  .formularioContacto .filtros .terminosycondiciones {
+    width: 90%;
+    margin: 20px auto; }
+  .formularioContacto .cajaBtn {
+    flex-direction: column-reverse;
+    align-items: center; }
+    .formularioContacto .cajaBtn button {
+      margin: 10px 0; }
+      .formularioContacto .cajaBtn button p {
+        font-size: 16px; } }
+@media screen and (max-width: 500px) {
+  header .usuario h3, header .usuario i {
+    font-size: 16px; }
+
+  .formularioContacto .camposextras .cajaTelefono {
+    width: 100%; }
+    .formularioContacto .camposextras .cajaTelefono .numTelefono .codigo {
+      width: 20%; }
+    .formularioContacto .camposextras .cajaTelefono .numTelefono .telefono {
+      width: 80%; }
+  .formularioContacto .camposextras .cajaRegion {
+    width: 100%; }
+
+  .contenedor .sliderJugadores .subContenedor .jugador img {
+    width: 180px;
+    height: 237px; } }
+@media screen and (max-width: 300px) {
+  .contenedor .sliderJugadores .subContenedor .jugador img {
+    width: 120px;
+    height: 158px; }
+  .contenedor .sliderJugadores .subContenedor .jugador .descripcion a {
+    font-size: 16px; }
+  .contenedor .sliderJugadores .subContenedor .jugador .descripcion p {
+    font-size: 14px; } }
+
+/*# sourceMappingURL=bt1.css.map */

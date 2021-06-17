@@ -1,0 +1,70 @@
+{% extends 'appAdmin/baseAdmin.html' %}
+
+{% load static %}
+
+{% block pagina %}
+Agregar imagen jugador
+{% endblock %}
+
+{% block main %}
+<main class="container">
+    <div class="cajaAgregImg">
+        <h1>Agregar imagen a {{jugador.pnombre}} {{jugador.apaterno}}</h1>
+        <h3>Imagenes ya existentes</h3>
+        <div class="cajaImagenesAgregImgs">
+            {% for img in imagenes %}
+            <div class="cajaImg">
+                <img src="{{img.imagenJug.url}}" alt="{{img.alt}}" title="{{img.title}}">
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    <form enctype="multipart/form-data" action="" method="post">
+        {% csrf_token %}
+        <div class="mb-3">
+            <label for="alt" class="form-label colorPrimario" aria-describedby="altHelp">ALT de la imagen (*)</label>
+            <input type="text" class="form-control" id="alt" name="alt">
+            <div id="altHelp" class="form-text">Lo que escribas arriba será una descripción que aparecerá cuando por
+                algún error no se muestre la imagen</div>
+        </div>
+        <div class="mb-3">
+            <label for="title" class="form-label colorPrimario" aria-describedby="titleHelp">Descripcion de la imagen
+                (*)</label>
+            <input type="text" class="form-control" id="title" name="title">
+            <div id="titleHelp" class="form-text">Lo que escribas arriba será una descripción que aparecerá cuando pases
+                con el mouse por encima de la foto</div>
+        </div>
+        <div class="mb-3">
+            <input type="text" class="form-control" id="fkJugador" name="fkJugador" value="{{jugador.idJugador}}"
+                style="display: none;">
+        </div>
+        <div class="mb-3">
+            <label for="imagenJug" class="form-label colorPrimario">Nueva imagen (*)</label>
+            <input type="file" class="form-control" id="imagenJug" value="{{form.imagenJug}}" name="imagenJug">
+        </div>
+        <!-- Button trigger modal -->
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalAgregarImgs">
+            Agregar
+        </button>
+        <!-- Modal -->
+        <div class="modal fade" id="modalAgregarImgs" tabindex="-1" aria-labelledby="labelmodalAgregarImgs"
+            aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="labelmodalAgregarImgs">Confirmación de datos</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        Vas a agregar una nueva imagen
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No, cerrar</button>
+                        <button type="submit" class="btn btn-primary">Sí, agregar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</main>
+{% endblock %}

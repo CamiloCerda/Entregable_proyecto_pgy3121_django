@@ -1,0 +1,73 @@
+{% extends 'appAdmin/baseAdmin.html' %}
+
+{% load static %}
+
+{% block pagina %}
+Jugadores
+{% endblock %}
+
+{% block main %}
+<main class="container">
+    <div class="nuevoJugador">
+        <a href="{% url 'administradorAgreg' %}">Agregar Nuevo Jugador</a>
+        <i class="far fa-hand-point-left"></i>
+    </div>
+    <div class="jugadores">
+        {% for jugador in jugadores %}
+        <div class="cajaJugador">
+            <div class="cajaImg">
+                <img src="{{ jugador.imagenPortada.url }}" alt="">
+            </div>
+            <div class="cajaNombre">
+                <h3>{{ jugador.pnombre }} {{ jugador.apaterno }}</h3>
+            </div>
+            <div class="cajaEnlaces">
+                <div class="fila1">
+                    <a href="{% url 'administradorModif' jugador.idJugador %}">
+                        <button type="button" class="btn btn-secondary">
+                            Modificar
+                        </button>
+                    </a>
+                    <!-- Button trigger modal -->
+                    <button type="button" class="btn btn-secondary" data-bs-toggle="modal"
+                        data-bs-target="#exampleModal{{jugador.idJugador}}">
+                        Eliminar
+                    </button>
+                    <!-- Modal -->
+                    <div class="modal fade" id="exampleModal{{jugador.idJugador}}" tabindex="-1"
+                        aria-labelledby="exampleModalLabel{{jugador.idJugador}}" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel{{jugador.idJugador}}">Confirmación de
+                                        datos</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    Confirma que deseas eliminar a {{jugador.pnombre}} {{jugador.apaterno}}
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary"
+                                        data-bs-dismiss="modal">Cerrar</button>
+                                    <button type="button" class="btn btn-primary">
+                                        <a href="{% url 'administradorBorrar' jugador.idJugador %}">Eliminar</a>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="fila2">
+                    <a href="{% url 'administradorAgregImg' jugador.idJugador %}">
+                        <button type="button" class="btn btn-secondary">
+                            Agregar imagen
+                        </button>
+                    </a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</main>
+{% endblock %}

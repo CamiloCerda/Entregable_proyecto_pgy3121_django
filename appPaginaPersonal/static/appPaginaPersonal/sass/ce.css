@@ -1,0 +1,138 @@
+.titulo {
+  font-family: 'Dancing Script';
+  color: #ffffff;
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px; }
+  .titulo i {
+    padding: 10px; }
+
+.contenedorImagenesClub {
+  margin-top: 50px;
+  padding: 40px;
+  border-radius: 5px;
+  background: url(../img/fondos/white_leather.png); }
+  .contenedorImagenesClub .primera {
+    padding-bottom: 10px; }
+    .contenedorImagenesClub .primera .col-sm-6 img {
+      width: 100%;
+      opacity: .7;
+      border-radius: 5px;
+      border: 1px solid #5c5c5c;
+      box-shadow: 8px 8px 20px #0a0a0a; }
+      .contenedorImagenesClub .primera .col-sm-6 img:hover {
+        transition: all .6s ease;
+        opacity: 1;
+        box-shadow: 8px 8px 20px #444444; }
+  .contenedorImagenesClub .segunda {
+    padding-bottom: 10px; }
+    .contenedorImagenesClub .segunda .col-md-4 {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between; }
+      .contenedorImagenesClub .segunda .col-md-4 .arriba img {
+        width: 100%;
+        opacity: .7;
+        border-radius: 5px;
+        border: 1px solid #5c5c5c;
+        box-shadow: 8px 8px 20px #0a0a0a; }
+        .contenedorImagenesClub .segunda .col-md-4 .arriba img:hover {
+          transition: all .6s ease;
+          opacity: 1;
+          box-shadow: 8px 8px 20px #444444; }
+      .contenedorImagenesClub .segunda .col-md-4 .abajo img {
+        width: 100%;
+        opacity: .7;
+        border-radius: 5px;
+        border: 1px solid #5c5c5c;
+        box-shadow: 8px 8px 20px #0a0a0a; }
+        .contenedorImagenesClub .segunda .col-md-4 .abajo img:hover {
+          transition: all .6s ease;
+          opacity: 1;
+          box-shadow: 8px 8px 20px #444444; }
+    .contenedorImagenesClub .segunda .col-md-8 img {
+      width: 100%;
+      opacity: .7;
+      border-radius: 5px;
+      border: 1px solid #5c5c5c;
+      box-shadow: 8px 8px 20px #0a0a0a; }
+      .contenedorImagenesClub .segunda .col-md-8 img:hover {
+        transition: all .6s ease;
+        opacity: 1;
+        box-shadow: 8px 8px 20px #444444; }
+  .contenedorImagenesClub .tercera {
+    padding-bottom: 10px; }
+    .contenedorImagenesClub .tercera .col-12 img {
+      width: 100%;
+      opacity: .7;
+      border-radius: 5px;
+      border: 1px solid #5c5c5c;
+      box-shadow: 8px 8px 20px #0a0a0a; }
+      .contenedorImagenesClub .tercera .col-12 img:hover {
+        transition: all .6s ease;
+        opacity: 1;
+        box-shadow: 8px 8px 20px #444444; }
+  .contenedorImagenesClub .cuarta .col-sm-6 img {
+    width: 100%;
+    opacity: .7;
+    border-radius: 5px;
+    border: 1px solid #5c5c5c;
+    box-shadow: 8px 8px 20px #0a0a0a; }
+    .contenedorImagenesClub .cuarta .col-sm-6 img:hover {
+      transition: all .6s ease;
+      opacity: 1;
+      box-shadow: 8px 8px 20px #444444; }
+
+@media screen and (max-width: 768px) {
+  .contenedorImagenesClub {
+    width: 90%;
+    margin: 50px auto;
+    padding: 20px; }
+    .contenedorImagenesClub .primera {
+      margin-bottom: 5px; }
+      .contenedorImagenesClub .primera .col-sm-6 img {
+        opacity: 1; }
+    .contenedorImagenesClub .segunda {
+      display: flex;
+      flex-direction: column-reverse; }
+      .contenedorImagenesClub .segunda .col-sm-12 {
+        display: flex;
+        flex-direction: row; }
+        .contenedorImagenesClub .segunda .col-sm-12 .arriba {
+          width: 50%;
+          padding-top: 10px;
+          padding-bottom: 0px;
+          padding-right: 10px; }
+          .contenedorImagenesClub .segunda .col-sm-12 .arriba img {
+            opacity: 1; }
+        .contenedorImagenesClub .segunda .col-sm-12 .abajo {
+          width: 50%;
+          padding-top: 10px;
+          padding-bottom: 0px;
+          padding-left: 10px; }
+          .contenedorImagenesClub .segunda .col-sm-12 .abajo img {
+            opacity: 1; }
+        .contenedorImagenesClub .segunda .col-sm-12 img {
+          opacity: 1;
+          margin-bottom: 5px; }
+    .contenedorImagenesClub .tercera {
+      margin-bottom: 5px; }
+      .contenedorImagenesClub .tercera .col-12 img {
+        opacity: 1; }
+    .contenedorImagenesClub .cuarta .col-sm-6 img {
+      opacity: 1; } }
+@media screen and (max-width: 576px) {
+  .contenedorImagenesClub {
+    padding: 10px; }
+    .contenedorImagenesClub .segunda .col-sm-12 {
+      display: block; }
+      .contenedorImagenesClub .segunda .col-sm-12 .arriba {
+        width: 100%;
+        padding-right: 0; }
+      .contenedorImagenesClub .segunda .col-sm-12 .abajo {
+        width: 100%;
+        padding-left: 0; } }
+
+/*# sourceMappingURL=ce.css.map */

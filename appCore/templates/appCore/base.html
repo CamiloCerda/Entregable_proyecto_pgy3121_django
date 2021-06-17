@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'appCore/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'appCore/sass/bt1.css' %}">
+    {% block css %}
+    
+    {% endblock %}
+    <script src="https://kit.fontawesome.com/0dbe242cdd.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Cinzel&family=Train+One&display=swap" rel="stylesheet">
+    <title>
+        {% block title %}
+
+        {% endblock %}
+    </title>
+</head>
+<body>
+    <header>
+        <div class="col-12 d-flex justify-content-center align-items-center tituloHeader d-none d-sm-flex">
+            <i class="fas fa-table-tennis"></i><h1>Asociación de tenis de mesa Santiago Sur</h1><i class="fas fa-table-tennis"></i>
+        </div>
+        <div class="col-12 d-flex justify-content-center align-items-center tituloHeader d-flex d-sm-none">
+            <i class="fas fa-table-tennis"></i><h1>A Stgo Sur</h1><i class="fas fa-table-tennis"></i>
+        </div>
+        {% if user.is_authenticated %}
+        <div class="usuario d-flex flex-column align-items-center">
+            <h3>Bienvenido:  {{user.username}}</h3>
+            <div class="cajaLogin d-flex justify-content-center">
+                <i class="fas fa-user"></i>
+                <a href="{% url 'logout' %}">Cerrar sesion</a>
+            </div>
+        </div>
+        {% else %}
+        <div class="usuario d-flex flex-column align-items-center">
+            <h3>Bienvenido: Invitado</h3>
+            <div class="cajaLogin">
+                <i class="fas fa-user"></i>
+                <a href="{% url 'login' %}">Abrir sesion</a>
+            </div>
+        </div>
+        {% endif %}
+        <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #0e293d;">
+            <div class="container-fluid">
+                <div class="navbar-brand d-block d-lg-none"></div>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarScroll">
+                    <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+                        <li class="nav-item">
+                            <a class="nav-link " aria-current="page" href="{% url 'home' %}"><i class="fas fa-home izq"></i>Inicio</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="dropGaleria" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-camera"></i>Galería</a>
+                            <ul class="dropdown-menu" aria-labelledby="dropGaleria">
+                                <li><a href="{% url 'centroEntrenamiento' %}" class="dropdown-item">Centro de entrenamiento</a></li>
+                                <li><a href="#" class="dropdown-item">Competiciones</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="fas fa-users izq"></i>Sobre nosotros
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
+                                <li><a class="dropdown-item" href="#">Nuestra historia</a></li>
+                                <li><a class="dropdown-item" href="#">Directiva</a></li>
+                                <li><a class="dropdown-item" href="{% url 'nuestrosJugadores' %}">Nuestros jugadores</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#formuContacto"><i class="fas fa-envelope izq"></i>Contáctanos</a>
+                        </li>
+                        {% if user.is_superuser %}
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'administrador' %}"><i class="fas fa-user-cog"></i>Administrador</a>
+                        </li>
+                        {% endif %}
+                    </ul>
+                    <form class="d-flex">
+                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-secondary" type="submit">Buscar</button>
+                    </form>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    {% block main %}
+
+    {% endblock %}
+    
+    <footer class="bg-dark mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 mt-5 d-flex justify-content-around iconos">
+                    <a target="_blank" href="https://www.facebook.com/clubtenisdemesasantiagosur" title="Ir a nuestra cuenta de Facebook"><i class="fab fa-facebook-square"></i></a>
+                    <a target="_blank" href="https://www.youtube.com/" title="Ir a nuestro canal de Youtube"><i class="fab fa-youtube"></i></a>
+                    <a target="_blank" href="https://www.instagram.com/javierherdocio/?hl=es-la" title="In a nuestra cuenta de Instagram"><i class="fab fa-instagram"></i></a> 
+                    <a target="_blank" href="https://www.pinterest.cl/" title="In a nuestra cuenta de Pinterest"><i class="fab fa-pinterest-square"></i></a>               
+                </div> 
+            </div>
+            <hr class="gris">
+            <div class="row">
+                <div class="col-12 col-lg-4 descripcion d-flex flex-column justify-content-around">
+                    <h3>Somos parte de la FECHITEME</h3>
+                    <h3>Somos una asociación sin fines de lucro</h3>
+                    <h3>¡Somos una familia!</h3>  
+                    <h3><b>Contactanos:</b> +5691234567</h3>
+                </div>
+                <hr class="gris d-block d-lg-none">
+                <div class="col-12 col-lg-4 d-flex flex-column justify-content-center">
+                    <div class="logos">
+                        <a target="_blank" href="https://www.ittf.com/" title="Ir a la página oficial de la ITTF">
+                            <img src="{% static 'appCore/img/tdm/galeria/logo-ittf.png' %}" alt="logo ittf">
+                        </a>
+                    </div>
+                    <h3 class="frase">¡Tenis de mesa, más que pasión por el deporte!</h3>
+                </div>
+                <hr class="gris d-block d-lg-none">
+                <div class="col-12 col-lg-4">
+                    <h3 class="ubicacion">Estamos ubicados:</h3>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3325.6196848893997!2d-70.64536968479848!3d-33.53727238074924!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9662da67249f28c1%3A0xe0da737b05432544!2sEcuador%201762%2C%20San%20Ram%C3%B3n%2C%20Regi%C3%B3n%20Metropolitana!5e0!3m2!1ses-419!2scl!4v1617768690210!5m2!1ses-419!2scl" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <script src="{% static 'appCore/js/jquery-3.5.1.min.js' %}"></script>
+    <script src="{% static 'appCore/js/popper.min.js' %}"></script>
+    <script src="{% static 'appCore/js/bootstrap.min.js' %}"></script>
+    {% block js %}
+
+    {% endblock %}
+</body>
+</html>

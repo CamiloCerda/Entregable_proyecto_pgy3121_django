@@ -1,0 +1,404 @@
+{% extends 'appCore/base.html' %}
+
+{% load static %}
+
+{% block title %}
+Asociación Santiago Sur
+{% endblock %}
+
+{% block main %}
+<div class="container bordedivisor">
+    <div class="row mt-4">
+        <div class="col caruselFotos">
+            <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
+                        aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+                        aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
+                        aria-label="Slide 3"></button>
+                </div>
+                <div class="carousel-inner">
+                    {% for slider in sliders %}
+                    <div class="carousel-item {% if slider.idImagen == 1 %}active{% endif %}">
+                        <img src="{{slider.imagen.url}}" class="d-block w-100" alt="mesa de ping pong con un tono acogedor"> 
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5>{{slider.titulo}}</h5>
+                            <p class="italica">{{slider.subtitulo}}
+                            </p>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
+                    data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Anterior</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
+                    data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Siguiente</span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="row mt-4 d-flex">
+        <main class="col-12 col-lg-9">
+            <div class="cajaRedes">
+                <div class="cajarrss">
+                    <h2 class="fs-4">¡Síguenos en nuestras redes sociales!</h2><i class="far fa-hand-point-up"></i>
+                </div>
+                <div class="iconos d-flex justify-content-around">
+                    <a target="_blank" href="https://www.facebook.com/clubtenisdemesasantiagosur" title="Ir a nuestra cuenta de Facebook"><i class="fab fa-facebook-square"></i></a>
+                    <a target="_blank" href="https://www.youtube.com/" title="Ir a nuestro canal de Youtube"><i class="fab fa-youtube"></i></a>
+                    <a target="_blank" href="https://www.instagram.com/javierherdocio/?hl=es-la" title="In a nuestra cuenta de Instagram"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            {% for noticia in noticias %}
+                {% if noticia.tipoNoticia == 'principal' %}
+                <div class="card noticiaPrincipal mb-2 text-light">
+                    <div class="card-body probando">
+                        <h5 class="card-title">{{ noticia.titulo }}</h5>
+                        <img src="{{ noticia.imagen.url }}" class="w-100" alt="ma long recibiendo un servicio">
+                        <p class="card-text">{{ noticia.subtitulo }}</p>
+                        <a href="{% url 'home' %}" class="card-link text-secondary">Leer más...</a>
+                    </div>
+                </div>
+                {% endif %}
+            {% endfor %}
+            
+            <div class="tresnoticias d-flex flex-column flex-md-row mb-2">
+            {% for noticia in noticias %}
+                {% if noticia.tipoNoticia == 'terciaria' %}
+                <div class="card mb-2 mb-md-1 m-md-1 clara" style="width: 100%;">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ noticia.titulo }}</h5>
+                        <img src="{{ noticia.imagen.url }}" class="w-100" alt="gonzalo Muñoz campeon en buin">
+                        <p class="card-text">{{ noticia.subtitulo }}</p>
+                        <a href="{% url 'home' %}" class="card-link text-dark">Leer más...</a>
+                    </div>
+                </div>   
+                {% endif %}
+            {% endfor %}
+            </div>
+
+
+            <div class="dosnoticias d-flex flex-column flex-md-row mb-2">
+                {% for noticia in noticias %}
+                    {% if noticia.tipoNoticia == 'secundaria' %}
+                    <div class="card mb-2 mb-md-1 m-md-1 bg-dark bg-gradient text-light" style="width: 100%;">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ noticia.titulo }}</h5>
+                            <img src="{{ noticia.imagen.url }}" class="w-100" alt="seleccion chilena de tenis de mesa">
+                            <p class="card-text">{{ noticia.subtitulo }}</p>
+                            <a href="{% url 'home' %}" class="card-link text text-secondary">Leer más...</a>
+                        </div>
+                    </div>   
+                    {% endif %}
+                {% endfor %}
+            </div>
+        </main>
+        <aside class="col-12 col-lg-3 d-flex flex-column align-items-center mb-2 ">
+            
+<!--             <div class="card mt-2 bg-dark bg-gradient cardClima" style="width: 100%;">
+                <div class="card-body text-light">
+                    <div class="titulo d-flex justify-content-center align-items-center">
+                        <i class="fas fa-cloud-sun-rain"></i><h5 class="card-title">Recomendaciones del señor Clima</h5><i class="fas fa-temperature-high"></i>
+                    </div>
+                    <div class="cajaImagenClima">
+                        <div class="cajaImagen" id="cajaImagen">
+                        </div>
+                        <p class="card-text" id="condicionesClima"></p>
+                        <p class="card-text" id="recomendacionClima"></p>
+                    </div>
+                    <div class="cajaImagenPorDefecto">
+                        <i class="fas fa-cloud-sun"></i>
+                        <p>Activa la geolocalizacion para que veas nuestras recomendaciones del clima</p>
+                    </div>
+                </div>
+            </div> -->
+            {% for noticia in noticias %}
+                {% if noticia.tipoNoticia == 'jugadorMes' %}
+                <div class="card mt-2 jugmes" style="width: 100%;">
+                    <div class="card-body">
+                        <div class="titulo d-flex justify-content-center">
+                            <i class="fas fa-trophy"></i><h5 class="card-title">{{ noticia.titulo }}</h5><i class="fas fa-trophy"></i>
+                        </div>
+                        <img src="{{ noticia.imagen.url }}" class="w-100 p-4" alt="camilo masias ejecutando un golpe de derecho">
+                        <p class="card-text">{{ noticia.subtitulo }}</p>
+                        <a href="{% url 'home' %}" class="card-link">Leer más...</a>
+                    </div>
+                </div>  
+                {% endif %}
+            {% endfor %}
+            {% for noticia in noticias %}
+                {% if noticia.tipoNoticia == 'lateral' %}
+                <div class="card mt-2 bg-dark bg-gradient" style="width: 100%;">
+                    <div class="card-body text-light">
+                        <div class="titulo d-flex justify-content-center">
+                            <h5 class="card-title">{{ noticia.titulo }}</h5><i class="fas fa-trophy"></i>
+                        </div>
+                        <img src="{{ noticia.imagen.url }}" class="w-100 p-4" alt="gimnasio chimkowe">
+                        <p class="card-text">{{ noticia.subtitulo }}</p>
+                        <a href="{% url 'home' %}" class="card-link text-secondary">Leer más...</a>
+                    </div>
+                </div>   
+                {% endif %}
+            {% endfor %}
+<!--             <div class="card mt-2 mb-2 colorFondo" style="width: 100%;">
+                <div class="card-body">
+                    <div class="titulo d-flex justify-content-center">
+                        <h5 class="card-title">Ranking interno</h5><i class="fas fa-medal"></i>
+                    </div>
+                    <div class="ranking bg-light bg-gradient">
+                        <h4>Posiciones</h4>
+                        <hr>
+                        <ol>
+                            <li>Camilo Masias</li>
+                            <li>Gonzalo Muñoz</li>
+                            <li>Miguel quilodran</li>
+                            <li>Javier Herdocio</li>
+                            <li>Claudio Verdugo</li>
+                            <li>...</li>
+                        </ol>
+                    </div>
+                    <a target="_blank" href="#" class="card-link text-secondary">Ver más...</a>
+                </div>
+            </div>    -->
+        </aside> 
+    </div>
+</div>
+
+<div class="contenedor">
+    <div class="sliderJugadores">
+        <div class="titulo d-flex align-items-center">
+            <h3>Nuestros jugadores</h3><i class="fas fa-users"></i>
+        </div>
+        <div class="subContenedor d-flex">
+            {% for jugador in jugadores %}
+            <div class="jugador">
+                <img class="rounded" src="{{ jugador.imagenPortada.url }}" alt="Imagen portada jugador">
+                <div class="descripcion">
+                    <a href="{% url 'paginaPersonal' jugador.idJugador %}">{{ jugador.pnombre }} {{ jugador.apaterno }}</a>
+                    <p>{{ jugador.categoria }}</p>
+                    <p>{{ jugador.estilo }}</p>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        <div class="flechas">
+            <div class="caja">
+                <i class="fas fa-chevron-left" id="btnIzq"></i>
+            </div>
+            <div class="caja">
+                <i class="fas fa-chevron-right" id="btnDer"></i>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+<div class="contenedorFormulario pb-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 tituloFormulario">
+                <h1 id="formuContacto">¡Importante!</h1>
+            </div>
+            <div class="col razonesContacto">
+                <p>Recuerda que si deseas contactarnos, por cualquier inquietud que tengas:</p>
+                <ul>
+                    <li>Deseas ser parte de nuestra asociación y quieres pertenecer a uno de nuestros clubes</li>
+                    <li>Quieres conocer detalle de nuestros entrenamientos</li>
+                    <li>Necesitas comunicarte con la directiva</li>
+                    <li>Hay alguna fecha importante ya sea de campeonatos u otros que te gustaría te informáramos</li>
+                    <li>Tienes una sugerencia, petición o reclamo que hacernos</li>
+                    <li>Y más...</li>
+                </ul>
+                <p class="destacar">¡No dudes en completar el siguiente formulario y enviarnos tu mensaje!</p>
+            </div>
+        </div>
+        <div class="row">
+            <!-- Estamos trabajando aqui -->
+            <form class="col formularioContacto m-2 bg-secondary bg-gradient">
+                <div class="row">
+                    <div class="mb-3 col-12 col-md-6">
+                        <label for="nombreFormu" class="form-label">Nombre(*)</label>
+                        <input type="text" class="form-control" name="nombreFormu" id="nombreFormu"
+                            placeholder="Nombre...">
+                        <div class="cajaError">
+                            <p id="errorNombre">Debes ingresar un nombre</p>
+                        </div>
+                    </div>
+                    <div class="mb-3 col-12 col-md-6">
+                        <label for="apellidoFormu" class="form-label">Apellido(*)</label>
+                        <input type="text" class="form-control" name="apellidoFormu" id="apellidoFormu"
+                            placeholder="Apellido...">
+                        <div class="cajaError">
+                            <p id="errorApellido">Debes ingresar un apellido</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="mailFormu" class="form-label">Tu correo electrónico(*)</label>
+                    <input type="email" class="form-control" name="mailFormu" id="mailFormu"
+                        placeholder="nombre@mail.com">
+                    <div class="cajaError">
+                        <p id="errorEmail">Debes ingresar un mail válido</p>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="mensajeFormu" class="form-label">Escribe tu mensaje aquí(*)</label>
+                    <textarea class="form-control" name="mensajeFormu" id="mensajeFormu" rows="3"></textarea>
+                    <div class="cajaError">
+                        <p id="errorMensaje">Debes ingresar almenos 50 caracteres</p>
+                    </div>
+                </div>
+                <div class="camposextras mt-2 mb-2">
+                    <div class="cajaTelefono">
+                        <label for="telefono" class="form-label">Tu teléfono</label>
+                        <div class="numTelefono d-flex">
+                            <input type="text" class="form-control codigo" name="codigo" id="codigo" placeholder="56"
+                                value="56">
+                            <input type="text" class="form-control telefono" name="telefono" id="telefono"
+                                placeholder="9 1234 8913">
+                        </div>
+                    </div>
+                    <div class="cajaRegion">
+                        <div class="region">
+                            <label for="region" class="form-label">Tu región(*)</label>
+                            <select class="form-select" name="region" id="region">
+                                <option value='0' selected>Escoge la region donde vives...</option>
+                                <option value="13">Region Metropolitana</option>
+                                <option value="15">Region de Arica y Parinacota</option>
+                                <option value="1">Region de Tarapacá</option>
+                                <option value="2">Region de Antogagasta</option>
+                                <option value="3">Region de Atacama</option>
+                                <option value="4">Region de Coquimbo</option>
+                                <option value="5">Region de Valparaíso</option>
+                                <option value="6">Region del Libertador Bernardo O'Higgins</option>
+                                <option value="7">Region del Maule</option>
+                                <option value="8">Region del Bío-Bío</option>
+                                <option value="9">Region de la Araucanía</option>
+                                <option value="14">Region de Los Ríos</option>
+                                <option value="10">Region de Los Lagos</option>
+                                <option value="11">Region de Aysén</option>
+                                <option value="12">Region de Magallanes</option>
+                            </select>
+                        </div>
+                        <div class="cajaError">
+                            <p id="errorRegion">Selecciona la región donde vives</p>
+                        </div>
+                    </div>
+                    <div class="cajaRutPasap">
+                        <label for="rutPasaporte" class="form-label texto">Tu rut (o pasaporte)(*)</label>
+                        <input type="text" class="form-control rutPasaporte" name="rutPasaporte" id="rutPasaporte"
+                            placeholder="rut sin puntos ni guión...">
+                        <div class="cajaError mb-1">
+                            <p id="errorRut">Rut inválido</p>
+                        </div>
+                        <div class="btn-group mt-2 radioRutPasap" role="group"
+                            aria-label="Basic radio toggle button group">
+                            <input type="radio" class="btn-check" name="rutPasap" value="rut" id="rut" checked>
+                            <label class="btn btn-outline-light" for="rut">Rut</label>
+
+                            <input type="radio" class="btn-check" name="rutPasap" value="pasaporte" id="pasaporte">
+                            <label class="btn btn-outline-light" for="pasaporte">Pasaporte</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="filtros d-flex flex-column flex-md-row">
+                    <div class="tipoMensaje">
+                        <div class="descripcion">
+                            <h5>Nos envías tu mensaje como</h5>
+                        </div>
+                        <div class="btn-group mb-3 radioTipoMensaje" role="group"
+                            aria-label="Basic radio toggle button group">
+                            <input type="radio" class="btn-check mb-2" name="generoFormu" value="aficionado"
+                                id="aficionado" checked>
+                            <label class="btn btn-outline-light" for="aficionado">Aficionado</label>
+
+                            <input type="radio" class="btn-check mb-2" name="generoFormu" value="jugador" id="jugador">
+                            <label class="btn btn-outline-light" for="jugador">Jugador</label>
+
+                            <input type="radio" class="btn-check mb-2" name="generoFormu" value="dirigente"
+                                id="dirigente">
+                            <label class="btn btn-outline-light" for="dirigente">Dirigente</label>
+                        </div>
+                    </div>
+                    <div class="terminosycondiciones">
+                        <button type="button" class="btn btn-outline-dark mb-2" data-bs-toggle="modal"
+                            data-bs-target="#modalTerminosCondiciones">
+                            Ver términos y condiciones
+                        </button>
+                        <div class="modal fade" id="modalTerminosCondiciones" tabindex="-1"
+                            aria-labelledby="labelModalTerminosCondiciones" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="labelModalTerminosCondiciones">Términos y
+                                            condiciones</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <p>
+                                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora, sunt?
+                                            Beatae provident placeat, laboriosam veritatis consectetur veniam, ipsam nam
+                                            voluptate voluptas optio corporis? Repudiandae voluptate quos aspernatur
+                                            nostrum! Quasi, id!
+                                        </p>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary"
+                                            data-bs-dismiss="modal">Cerrar</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" name="terminos" value="aceptarTerminos"
+                                id="checkboxTerminos">
+                            <label class="form-check-label text-light mb-2" id="mensajeTerminos" for="checkboxTerminos">
+                                Acepto términos de la mensajería(*)
+                            </label>
+                            <div class="cajaError">
+                                <p id="errorTerminos">Debes aceptar terminos y condiciones</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="alert alert-danger fade show alertPreventDefault" role="alert">
+                    <strong>Completa los campos faltantes.</strong>
+                </div>
+                <div class="cajaBtn">
+                    <button type="reset" class="btn btn-dark limpiar" id="limpiar">
+                        <span class="d-none d-sm-block">
+                            Limpiar campos
+                        </span>
+                        <span class="d-block d-sm-none">
+                            Limpiar
+                        </span>
+                    </button>
+                    <button type="submit" class="btn btn-dark enviar" id="enviar">
+                        <span class="d-none d-sm-block">
+                            Envianos tu mensaje
+                        </span>
+                        <span class="d-block d-sm-none">
+                            Enviar
+                        </span>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+
+{% block js %}
+<script src="{% static 'appCore/js/sliderJugadores.js' %}"></script> 
+<script src="{% static 'appCore/js/validarFormu.js' %}"></script>
+<script src="{% static 'appCore/js/clima.js' %}"></script>  
+{% endblock %}

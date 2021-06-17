@@ -1,0 +1,62 @@
+{% extends 'appCore/base.html' %}
+
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'appGaleria/sass/paginaPersonal.css' %}">
+<link rel="stylesheet" href="{% static 'appGaleria/sass/ce.css' %}">
+{% endblock %}
+
+{% block title %}
+    Centro de entrenamiento ASS
+{% endblock %}
+
+{% block main %}
+
+<main>
+    <div class="titulo d-none d-sm-flex">
+        <i class="fas fa-table-tennis"></i><h1>Centro de entreamiento A.S.Sur</h1><i class="fas fa-table-tennis"></i>
+    </div>
+    <div class="titulo d-flex d-sm-none">
+        <i class="fas fa-table-tennis"></i><h1>Club A S S</h1><i class="fas fa-table-tennis"></i>
+    </div>
+    <div class="container contenedorImagenesClub">
+        <div class="row primera">
+            <div class="col-sm-6 mb-3 mb-sm-0">
+                <img src="{% static 'appGaleria/img/club/1.jpg' %}" alt="Asociación Santiago Sur" title="entreamiento en nuestra asociacióon">
+            </div>
+            <div class="col-sm-6">
+                <img src="{% static 'appGaleria/img/club/2.jpg' %}" alt="Asociación Santiago Sur" title="entreamiento en nuestra asociacióon">
+            </div>
+        </div>
+        <div class="row segunda">
+            <div class="col-sm-12 col-md-4">
+                <div class="arriba">
+                    <img src="{% static 'appGaleria/img/club/3.jpg' %}" alt="Asociación Santiago Sur" title="entreamiento en nuestra asociacióon">
+                </div>
+                <div class="abajo">
+                    <img src="{% static 'appGaleria/img/club/4.jpg' %}" alt="Asociación Santiago Sur" title="entreamiento en nuestra asociacióon">
+                </div>
+            </div>
+            <div class="col-sm-12 col-md-8">
+                <img src="{% static 'appGaleria/img/club/5.jpg' %}" alt="Asociación Santiago Sur" title="entreamiento en nuestra asociacióon">
+            </div>
+        </div>
+        <div class="row tercera">
+            <div class="col-12">
+                <img src="{% static 'appGaleria/img/club/6.jpg' %}" alt="Asociación Santiago Sur" title="entreamiento en nuestra asociacióon">
+            </div>
+        </div>
+        <div class="row cuarta">
+            <div class="col-sm-6 mb-3 mb-sm-0">
+                <img src="{% static 'appGaleria/img/club/7.jpg' %}" alt="Asociación Santiago Sur" title="entreamiento en nuestra asociacióon">
+            </div>
+            <div class="col-sm-6">
+                <img src="{% static 'appGaleria/img/club/8.jpg' %}" alt="Asociación Santiago Sur" title="entreamiento en nuestra asociacióon">
+            </div>
+        </div>
+    </div>
+</main>
+
+
+{% endblock %}

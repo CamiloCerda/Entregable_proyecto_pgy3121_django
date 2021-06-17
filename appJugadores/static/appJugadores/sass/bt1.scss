@@ -1,0 +1,638 @@
+body {
+    background: url(../img/fondos/black_denim.png);
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+header {
+    .tituloHeader {
+        font-family: 'Dancing Script';
+        color: #000000;
+        background-color: #ffffff;
+        justify-content: center;
+        i {
+            margin: 0 20px;
+            font-size: 30px;
+        }
+    }
+    .usuario {
+        background-color: #ffffff;
+        font-family: 'Dancing Script';
+        display: flex;
+        justify-content: center;
+        //align-items: center;
+        align-content: center;
+        h3, i {
+            font-size: 20px;
+        }
+        i {
+            margin: 0 10px;
+        }
+        a {
+            color: #131313;
+        }
+    }
+    nav {
+        .container-fluid {
+            .navbar-brand {
+                width: 50px;
+            }
+            .navbar-collapse {
+                .navbar-nav {
+                    .nav-item {
+                        margin-right: 25px;
+                        a {
+                            i {
+                                padding-right: 10px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+.fas, .titulo {
+    font-size: 1em;
+}
+.italica {
+    font-style: italic;
+}
+.caruselFotos {
+    background: url(../img/fondos/white_leather.png);
+    border-radius: 10px;
+    padding: 20px;
+    /* font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; */
+}
+main {
+    .cajaRedes {
+        background: url(../img/fondos/white_leather.png);
+        margin: 20px 0;
+        padding: 20px;
+        border-radius: 10px;
+        .cajarrss {
+            display: flex;
+            justify-content: start;
+            align-items: center;
+            color: #3b3b3b;//616161
+            h2 {
+                font-style: italic;
+            }
+            i {
+                margin-left: 10px;
+                font-size: 30px;
+            }
+        }
+        .iconos {
+            padding: 50px 0;
+            a {
+                i {
+                    font-size: 30px;
+                    color: #3b3b3b;
+                }
+            }
+        }
+    }
+    .noticiaPrincipal {
+        background: url(../img/fondos/black_denim.png);
+        border: 1px solid #ffffff;
+        .probando {
+            h5 {
+                padding-bottom: 5px;
+                border-bottom: 2px solid #620001;
+            }
+        }
+    }
+    .tresnoticias {
+        //background-color: red;
+        .card {
+            background: url(../img/fondos/white_leather.png);
+            &.oscura {
+                background: url(../img/fondos/black_denim.png);
+                border: 1px solid rgb(190, 190, 190);
+                color: #ffffff;
+                .card-body {
+                    h5 {
+                        padding-bottom: 5px;
+                        border-bottom: 2px solid #ffffff;
+                    }
+                }
+            }
+            //background-color: #9c9c9c;//620001,a33c1f
+            .card-body {
+                color: #252525;
+                h5 {
+                    padding-bottom: 5px;
+                    border-bottom: 2px solid #131313;
+                }
+            }
+        }
+    }
+    .dosnoticias {
+        .card {
+            .card-body {
+                h5 {
+                    padding-bottom: 5px;
+                    border-bottom: 2px solid #413c8b;
+                }
+            }
+        }
+    }
+}
+aside {
+    border: 1px solid rgb(218, 218, 218);
+    .cardClima {
+        .card-body {
+            .titulo {
+                i {
+                    margin: 0 10px;
+                    font-size: 23px;
+                    text-align: center;
+                }
+                h5 {
+                    font-size: 16px;
+                    text-align: center;
+                }
+            }
+            .cajaImagenClima {
+                display: none;
+                .cajaImagen {
+                    //background-color: #cbe0e9;
+                    border-radius: 10px;
+                    margin: 10px 0;
+                    img {
+                        width: 70%;
+                        margin: auto;
+                    }
+                }
+                p {
+                    text-align: center;
+                    color: #f3f3f3;
+                    font-weight: 500;
+                    font-style: italic;
+                }
+            }
+            .cajaImagenPorDefecto {
+                text-align: center;
+                i {
+                    font-size: 50px;
+                    margin: 20px 0;
+                }
+                p {
+                    text-align: center;
+                    color: #f3f3f3;
+                    font-weight: 500;
+                    font-style: italic;
+                }
+            }
+        }
+    }
+    .ranking {
+        background-color: #dadada;
+        margin: 10px auto;
+        padding: 20px;
+        h4 {
+            font-size: 17px;
+            font-weight: 500;
+        }
+        ol {
+            li {
+                border-bottom: 1px solid rgb(190, 190, 190);
+            }
+        }
+    }
+    .colorFondo {
+        background: url(../img/fondos/white_leather.png);
+    }
+    .jugmes {
+        //background-color: #FDF0ED;
+        background: url(../img/fondos/white_leather.png);
+        color: #3b3b3b;
+        .titulo {
+            i {
+                margin: 0 10px;
+                font-size: 16px;
+                text-align: center;
+            }
+            h5 {
+                font-size: 16px;
+                text-align: center;
+            }
+        }
+        p, a {
+            color: #3b3b3b;
+        }
+        p {
+            text-align: justify;
+        }
+        a:hover {
+            color: #000000;
+            transition: all .5s ease;
+        }
+    }
+}
+.bordedivisor {
+    padding-bottom: 20px;
+    border-bottom: 1px solid #b4b4b4;
+}
+.contenedor {
+    background: url(../img/fondos/black_denim.png);
+    .sliderJugadores {
+        width: 96%;
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        .titulo {
+            align-self: flex-start;
+            margin-top: 50px;
+            h3 {
+                color: #f3f3f3;
+                padding: 0 20px;
+                display: inline-block;
+            }
+            i {
+                color: #f3f3f3;
+                font-size: 2em;
+            }
+        }
+        .subContenedor {
+            width: 89%;
+            margin: 20px auto 40px auto;
+            display: flex;
+            overflow: hidden;
+            .jugador {
+                padding: 5px;
+                //opacity: .7;
+                transition: all 1s ease;           
+                /* &:hover {
+                    opacity: 1;
+                } */
+                .descripcion {
+                    text-align: center;
+                    background-color: #ffffff;
+                    a {
+                        color: #727171;
+                        text-decoration: none;
+                        font-weight: 500;
+                        font-size: 18px;
+                        &:hover {
+                            transition: color .3s ease;
+                            color: #161616;
+                        }
+                        &:active {
+                            text-decoration: underline;
+                        }
+                    }
+                }
+            }
+        }
+        .flechas {
+            display: flex;
+            .caja {
+                i {
+                    font-size: 2.5em;
+                    color: #dddddd;
+                    margin-bottom: 50px;
+                    &.fa-chevron-left {
+                        margin-right: 20px;
+                    }
+                    &.fa-chevron-right {
+                        margin-left: 20px;
+                    }
+                    &:hover {
+                        cursor: pointer;
+                    }
+                    &:active {
+                        opacity: .7;
+                    }
+                }
+            }
+            
+        }
+    }
+}
+//Texto previo al formulario -------------
+.contenedorFormulario {
+    background: url(../img/fondos/white_leather.png);
+}
+.tituloFormulario {
+    h1 {
+        padding-top: 50px;
+        text-align: center;
+    }
+}
+.razonesContacto {
+    p {
+        text-align: center;
+        padding-top: 20px;
+    }
+    ul {
+        font-style: italic;
+        list-style: none;
+        list-style:inside;
+        li {
+            font-size: 15px;
+        }
+        &.destacar {
+            font-size: 18px;
+        }
+    }
+}
+/* aca estamos en el formulario */
+.fondoRojo {
+    transition: all 0.4s ease;
+    background-color: #e95f64;
+    border: 2px solid #ff2828;
+    //color: #752626;
+}
+.formularioContacto {
+    background-color: #dadada;
+    padding: 20px;
+    border-radius: 10px;
+    width: 90%;
+    margin: auto;
+    .cajaError {
+        height: 16px;
+        p {
+            padding-top: 3px;
+            padding-bottom: 2px;
+            color: #960409;
+            font-weight: 600;
+            display: none;
+        }
+    }
+    .camposextras {
+        display: flex;
+        flex-wrap: wrap;
+        .cajaTelefono{
+            width: 33%;
+            padding: 10px;
+            .numTelefono {
+                width: 100%;
+                .codigo {
+                    width: 20%;
+                }
+                .telefono {
+                    width: 80%;
+                }
+            }
+        }
+        .cajaRegion {
+            padding: 10px;
+            width: 33%;
+        }
+        .cajaRutPasap {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 10px;
+            width: 33%;
+            .texto {
+                align-self: start;
+            }
+            .radioRutPasap {
+                margin: auto;
+            }
+        }
+    }
+    .filtros {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        margin: 20px 0;
+        .tipoMensaje {
+            .descripcion {
+                h5 {
+                    font-size: 16px;
+                    text-align: center;
+                }
+            }
+            .radioTipoMensaje {
+                width: 90%;
+                margin: auto;
+            }
+        }
+        .terminosycondiciones {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+    .cajaBtn {
+        display: flex;
+        justify-content: center;
+        button {
+            width: 80%;
+            margin: 0 10px;
+            span {
+                font-size: 19px;
+                padding: 10px;
+            }
+        }
+    }
+    .alertPreventDefault {
+        display: none;
+    }
+}
+//Todo lo referente al formulario de contacto hasta aca
+footer {
+    background: url(../img/fondos/black_denim.png);
+    .iconos {
+        padding: 40px 0;
+        a {
+            i {
+                font-size: 30px;
+                color: #fafafa;
+            }
+        }
+    }
+    .descripcion {
+        text-align: justify;
+        h3 {
+            font-size: 16px;
+            font-weight: 400;
+            color: #ffffff;
+        }
+    }
+    .gris {
+        color: #ffffff;
+        margin-bottom: 15px;
+        margin-top: 15px;
+    }
+    .logos {
+        display: flex;
+        justify-content: center;
+        a {
+            img {
+                padding-top: 50px;
+                width: 100%;
+            }
+        }
+    }
+    .ubicacion {
+        color: #ffffff;
+        font-size: 16px;
+        font-weight: 400;
+        margin: 20px 0;
+    }
+    .frase {
+        color: #ffffff;
+        font-size: 16px;
+        font-weight: 400;
+        margin: 40px 0;
+        text-align: center;
+    }
+    iframe {
+        margin-bottom: 20px;
+        width: 80%;
+        margin: 0 auto;
+        border-radius: 5px;
+    }
+}
+//validaciones formulario
+@media screen and (max-width:768px) {
+    header {
+        .usuario {
+            padding-top: 10px;
+            h3, i {
+                font-size: 17px;
+            }
+        }
+    }
+    .caruselFotos {
+        border-radius: 0;
+        padding: 2px;
+    }
+    main {
+        .tresnoticias {
+            .card {
+                &.clara {
+                    background: url(../img/fondos/white_leather.png);
+                }
+                &.oscura {
+                    background: url(../img/fondos/black_denim.png);
+                    border: 1px solid #929292;
+                    .card-body {
+                        h5 {
+                            border-bottom: 2px solid #413c8b;
+                        }
+                    }
+                }
+                .card-body {
+                    color: #333333;
+                    h5 {
+                        border-bottom: 2px solid #333333;
+                    }
+                }
+            }
+        }
+    }
+    .formularioContacto {
+        .camposextras {
+            .cajaTelefono{
+                width: 50%;
+                .numTelefono {
+                    .codigo {
+                        width: 30%;
+                    }
+                    .telefono {
+                        width: 70%;
+                    }
+                }
+            }
+            .cajaRegion {
+                width: 50%;
+            }
+            .cajaRutPasap {
+                width: 100%;
+            }
+        }
+        .filtros {
+            .tipoMensaje {
+                .radioTipoMensaje {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    input, label {
+                        width: 100%;
+                    }
+                }
+            }
+            .terminosycondiciones {
+                width: 90%;
+                margin: 20px auto;
+            }
+        }
+        .cajaBtn {
+            flex-direction: column-reverse;
+            align-items: center;
+            button {
+                margin: 10px 0;
+                p {
+                    font-size: 16px;
+                }
+            }
+        }
+    }
+}
+@media screen and (max-width:500px){
+    header {
+        .usuario {
+            h3, i {
+                font-size: 16px;
+            }
+        }
+    }
+    .formularioContacto {
+        .camposextras {
+            .cajaTelefono{
+                width: 100%;
+                .numTelefono {
+                    .codigo {
+                        width: 20%;
+                    }
+                    .telefono {
+                        width: 80%;
+                    }
+                }
+            }
+            .cajaRegion {
+                width: 100%;
+            }
+        }
+    }
+    .contenedor {
+        .sliderJugadores {
+            .subContenedor {
+                .jugador {
+                    img {
+                        width: 180px;
+                        height: 237px;
+                    }
+                }
+            }
+        }
+    }
+}
+@media screen and (max-width:300px){
+    .contenedor {
+        .sliderJugadores {
+            .subContenedor {
+                .jugador {
+                    img {
+                        width: 120px;
+                        height: 158px;
+                    }
+                    .descripcion {
+                        a {
+                            font-size: 16px;
+                        }
+                        p {
+                            font-size: 14px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

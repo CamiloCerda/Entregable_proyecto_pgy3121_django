@@ -1,0 +1,29 @@
+{% extends 'appAdmin/baseAdmin.html' %}
+
+{% load static %}
+
+{% block pagina %}
+Modificar imagenes
+{% endblock %}
+
+{% block main %}
+<main class="container cajaModificarImg">
+    
+    {% for jugador in jugadores %}
+    <div class="row">
+<!--         <h3>{{jugador.pnombre}} {{jugador.apaterno}}</h3>
+        <h2>gg</h2> -->
+        <div class="contenedor">
+            <div class="caja1">
+                <h3>{{jugador.pnombre}} {{jugador.apaterno}}</h3>
+            </div>
+            <div class="caja2">
+                <a href="{% url 'modificarImgPersonal' jugador.idJugador %}">
+                    <button type="button" class="btn btn-primary">Modificar</button>
+                </a>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</main>
+{% endblock %}

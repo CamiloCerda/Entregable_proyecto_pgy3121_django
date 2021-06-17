@@ -1,0 +1,112 @@
+{% extends 'appAdmin/baseAdmin.html' %}
+
+{% load static %}
+
+{% block pagina %}
+Agregar jugador
+{% endblock %}
+
+{% block main %}
+{% if mensaje == 'Categoria editada correctamente' %}
+<div class="alert alert-success mt-4 alert-dismissible fade show" role="alert">
+    {{mensaje}}
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+{% elif mensaje == 'Recuerda que debes cargar la imagen de Portada del jugador' or mensaje == 'Recuerda que debes completar los campos con *'%}
+<div class="alert alert-danger mt-4 alert-dismissible fade show" role="alert">
+    {{mensaje}}
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+{% endif %}
+<main>
+    <form enctype="multipart/form-data" method="POST" class="container mt-5 formularioAgregarJugadores">
+        {% csrf_token %}
+        <h2>Formulario para agregar un nuevo jugador</h2>
+        <h4>Recuerda que los campos con (*) son obligatorios</h4>
+        <div class="mb-3">
+            <label for="pnombre" class="form-label colorPrimario">Primer nombre (*)</label>
+            <input type="text" class="form-control" id="pnombre" value="{{jugador.pnombre}}" name="pnombre" aria-describedby="emailHelp">
+            <!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
+        </div>
+        <div class="mb-3">
+            <label for="snombre" class="form-label colorPrimario">Segundo nombre</label>
+            <input type="text" class="form-control" id="snombre" value="{{jugador.snombre}}" name="snombre">
+        </div>
+        <div class="mb-3">
+            <label for="apaterno" class="form-label colorPrimario">Apellido paterno (*)</label>
+            <input type="text" class="form-control" id="apaterno" value="{{jugador.apaterno}}" name="apaterno">
+        </div>
+        <div class="mb-3">
+            <label for="amaterno" class="form-label colorPrimario">Apellido materno</label>
+            <input type="text" class="form-control" id="amaterno" value="{{jugador.amaterno}}" name="amaterno">
+        </div>
+        <div class="mb-3">
+            <label for="nacimiento" class="form-label colorPrimario">Lugar de nacimiento (*)</label>
+            <input type="text" class="form-control" id="nacimiento" value="{{jugador.nacimiento}}" name="nacimiento">
+        </div>
+        <div class="mb-3">
+            <label for="fechaNacimiento" class="form-label colorPrimario">Fecha de nacimiento</label>
+            <input type="date" class="form-control" id="fechaNacimiento" value="{{jugador.fechaNacimiento}}" name="fechaNacimiento">
+        </div>
+        <div class="mb-3">
+            <label for="estilo" class="form-label colorPrimario">Estilo de juego (*)</label>
+            <input type="text" class="form-control" id="estilo" value="{{jugador.estilo}}" name="estilo">
+        </div>
+        <div class="mb-3">
+            <label for="preInf" class="form-label colorPrimario">Categoría pre-infantil (*)</label>
+            <input type="text" class="form-control" id="preInf" value="{{jugador.preInf}}" name="preInf">
+        </div>
+        <div class="mb-3">
+            <label for="inf" class="form-label colorPrimario">Categoría infantil (*)</label>
+            <input type="text" class="form-control" id="inf" value="{{jugador.inf}}" name="inf">
+        </div>
+        <div class="mb-3">
+            <label for="juvenil" class="form-label colorPrimario">Categoría juvenil (*)</label>
+            <input type="text" class="form-control" id="juvenil" value="{{jugador.juvenil}}" name="juvenil">
+        </div>
+        <div class="mb-3">
+            <label for="tc" class="form-label colorPrimario">Categoría todo competidor (*)</label>
+            <input type="text" class="form-control" id="tc" value="{{jugador.tc}}" name="tc">
+        </div>
+        <div class="mb-3">
+            <label for="imagenPortada" class="form-label colorPrimario">Imagen de portada (*)</label>
+            <input type="file" class="form-control" id="imagenPortada" name="imagenPortada">
+        </div>
+        <div class="mb-3">
+            <label for="categoria" class="form-label colorPrimario">Categoría actual</label>
+            <input type="text" class="form-control" id="categoria" value="{{jugador.categoria}}" name="categoria">
+        </div>
+        <div class="mb-3">
+            <label for="genero" class="form-label colorPrimario">Género (M o F)</label>
+            <input type="text" class="form-control" id="genero" value="{{jugador.genero}}" name="genero">
+        </div>
+        <!-- Button trigger modal -->
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            Agregar
+        </button>
+          <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Confirmación de datos</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                Confirma que deseas agregar un nuevo jugador
+                </div>
+                <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                <button type="submit" class="btn btn-primary">Confirmar nuevo jugador</button>
+                </div>
+            </div>
+            </div>
+        </div>
+    </form>
+</main>
+{% endblock %}
+
+
+
+  
+

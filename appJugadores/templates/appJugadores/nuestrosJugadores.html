@@ -1,0 +1,81 @@
+{% extends 'appCore/base.html' %}
+
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'appJugadores/sass/nuestrosJugadores.css' %}">
+{% endblock %}
+
+{% block title %}
+Nuestros Jugadores
+{% endblock %}
+
+{% block main %}
+
+
+<main class="container">
+    <div class="contenedorJugadores">
+        <div class="titulo">
+            <h1>Nuestros jugadores</h1>
+        </div>
+        <form action="" method="post">
+            {% csrf_token %}
+            <div class="filtros mb-4">
+                <div class="categoria mt-4 mt-lg-0">
+                    <select class="form-select" aria-label="Default select example" name="selectCategoria"
+                        id="category">
+                        <!-- <option selected>Categoría</option> -->
+                        <option selected value="todos">Todos</option>
+                        <option value="Pre-Infantil">Pre-Infantil</option>
+                        <option value="Infantil">Infantil</option>
+                        <option value="Juvenil">Juvenil</option>
+                        <option value="T.C.">Todo Competidor</option>
+                        <option value="Senior">Senior</option>
+                    </select>
+                </div>
+
+                <div class="btn-group d-flex flex-column flex-sm-row mb-4 mb-sm-0" role="group"
+                    aria-label="Basic radio toggle button group">
+                    <input type="radio" class="btn-check" name="radioGenero" id="mujer" value="F" checked>
+                    <label class="btn btn-outline-light" for="mujer">Mujeres</label>
+
+                    <input type="radio" class="btn-check" name="radioGenero" id="hombre" value="M">
+                    <label class="btn btn-outline-light" for="hombre">Hombres</label>
+
+                    <input type="radio" class="btn-check" name="radioGenero" id="todos" value="todos">
+                    <label class="btn btn-outline-light" for="todos">Todos</label>
+                </div>
+
+                <button type="submit" class="btn buscar mb-4">Buscar</button>
+            </div>
+
+            <div class="jugadores">
+                {% if jugadores %}
+                {% else %}
+                <div class="mensajeInicial">
+                    {% if vacio %}
+                    <h2>
+                        {{vacio}}
+                    </h2>
+                    {% else %}
+                    <h2>
+                        Presione el botón "Buscar" para ver los jugadores deseados
+                    </h2>
+                    {% endif %}
+                </div>
+                {% endif %}
+                {% for jugador in jugadores %}
+                <div class="jugador">
+                    <img src="{{jugador.imagenPortada.url}}" alt="">
+                    <a href="{% url 'paginaPersonal' jugador.idJugador %}">{{jugador.pnombre}} {{jugador.apaterno}}</a>
+                </div>
+                {% endfor %}
+            </div>
+
+        </form>
+        <!-- <script src="{% static 'appJugadores/js/nuestrosJugadores.js' %}"></script> -->
+    </div>
+</main>
+
+
+{% endblock %}
