@@ -99,6 +99,24 @@ main {
                 }
             }
         }
+        .filtrosEscogidos {
+            display: flex;
+
+            .cajaCategory, .cajaGenre {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+                color: #a0a0a0;
+                h4 {
+                    margin-right: 10px;
+                    font-size: 20px;
+                }
+                h5 {
+                    margin-right: 20px;
+                }
+            }
+        }
         .jugadores {
             width: 90%;
             margin: auto;
@@ -250,6 +268,18 @@ footer {
                         margin-bottom: 10px;
                     }
                     margin-bottom: 30px;
+                }
+            }
+            .filtrosEscogidos {
+                display: flex;
+                flex-direction: column;
+                .cajaCategory, .cajaGenre {
+                    h4 {
+                        font-size: 17px;
+                    }
+                    h5 {
+                        font-size: 15px;
+                    }
                 }
             }
             .jugadores {

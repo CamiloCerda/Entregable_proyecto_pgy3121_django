@@ -69,6 +69,19 @@ main .contenedorJugadores {
       main .contenedorJugadores .filtros .buscar:active {
         transition: all 0.3s ease;
         opacity: .8; }
+  main .contenedorJugadores .filtrosEscogidos {
+    display: flex; }
+    main .contenedorJugadores .filtrosEscogidos .cajaCategory, main .contenedorJugadores .filtrosEscogidos .cajaGenre {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      color: #a0a0a0; }
+      main .contenedorJugadores .filtrosEscogidos .cajaCategory h4, main .contenedorJugadores .filtrosEscogidos .cajaGenre h4 {
+        margin-right: 10px;
+        font-size: 20px; }
+      main .contenedorJugadores .filtrosEscogidos .cajaCategory h5, main .contenedorJugadores .filtrosEscogidos .cajaGenre h5 {
+        margin-right: 20px; }
   main .contenedorJugadores .jugadores {
     width: 90%;
     margin: auto;
@@ -176,6 +189,13 @@ footer iframe {
         margin-bottom: 30px; }
         main .contenedorJugadores .filtros .categoria label {
           margin-bottom: 10px; }
+    main .contenedorJugadores .filtrosEscogidos {
+      display: flex;
+      flex-direction: column; }
+      main .contenedorJugadores .filtrosEscogidos .cajaCategory h4, main .contenedorJugadores .filtrosEscogidos .cajaGenre h4 {
+        font-size: 17px; }
+      main .contenedorJugadores .filtrosEscogidos .cajaCategory h5, main .contenedorJugadores .filtrosEscogidos .cajaGenre h5 {
+        font-size: 15px; }
     main .contenedorJugadores .jugadores {
       justify-content: center; }
       main .contenedorJugadores .jugadores .jugador {

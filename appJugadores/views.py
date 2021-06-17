@@ -9,6 +9,14 @@ def nuestrosJugadores(request):
 
         category = request.POST['selectCategoria']
         genre = request.POST['radioGenero']
+
+        datos['filtroCat'] = category
+        if genre == 'F':
+            datos['filtroGen'] = 'Mujer'
+        elif genre == 'M':
+            datos['filtroGen'] = 'Hombre'
+        else:
+            datos['filtroGen'] = 'Todos'
         
         if category == 'todos':
             if genre == 'todos':

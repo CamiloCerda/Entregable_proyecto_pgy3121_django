@@ -49,6 +49,19 @@ Nuestros Jugadores
                 <button type="submit" class="btn buscar mb-4">Buscar</button>
             </div>
 
+            {% if filtroCat and filtroGen %}
+            <div class="filtrosEscogidos">
+                <div class="cajaCategory">
+                    <h4>Categoría:</h4>
+                    <h5>{{filtroCat}}</h5>
+                </div>
+                <div class="cajaGenre">
+                    <h4>Genero:</h4>
+                    <h5>{{filtroGen}}</h5>
+                </div>
+            </div>
+            {% endif %}
+
             <div class="jugadores">
                 {% if jugadores %}
                 {% else %}
