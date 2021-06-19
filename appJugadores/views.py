@@ -27,9 +27,9 @@ def nuestrosJugadores(request):
             #print(datos['jugadores'])
         else:
             if genre == 'todos':
-                jugadores = Jugador.objects.filter(categoria = category)
+                jugadores = Jugador.objects.filter(categoria = category).order_by('apaterno')
             else:
-                jugadores = Jugador.objects.filter(categoria = category, genero = genre)
+                jugadores = Jugador.objects.filter(categoria = category, genero = genre).order_by('apaterno')
             datos['jugadores'] = jugadores
             #print(datos['jugadores'])
         if not datos['jugadores']:
