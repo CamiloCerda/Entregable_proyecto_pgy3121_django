@@ -23,10 +23,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'kg3#@$8k#6fh!sfkbx#tl^f5pvnjj%ddz*e5rg&&2lvul3ax@1'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
+#True
 
-ALLOWED_HOSTS = []
-
+ALLOWED_HOSTS = ['127.0.0.1', 'ccerda.pythonanywhere.com']
+#vacia
 
 # Application definition
 
