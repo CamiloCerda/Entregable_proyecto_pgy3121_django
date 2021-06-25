@@ -1,0 +1,60 @@
+{% extends 'appAdmin/baseAdmin.html' %}
+
+{% load static %}
+
+{% block pagina %}
+Agregar Sliders
+{% endblock %}
+
+{% block main %}
+{% if mensaje == 'Categoria editada correctamente' %}
+<div class="alert alert-success mt-4 alert-dismissible fade show" role="alert">
+    {{mensaje}}
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+{% elif mensaje == 'Recuerda que debes cargar la imagen del slider' or mensaje == 'Recuerda que debes completar los campos con *'%}
+<div class="alert alert-danger mt-4 alert-dismissible fade show" role="alert">
+    {{mensaje}}
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+{% endif %}
+<main class="container mt-5">
+    <form enctype="multipart/form-data" method="post">
+        {% csrf_token %}
+        <div class="mb-3">
+            <label for="imagen" class="form-label colorPrimario">Imagen del slider (*)</label>
+            <input type="file" class="form-control" id="imagen" name="imagen">
+        </div>
+        <div class="mb-3">
+            <label for="titulo" class="form-label colorPrimario">Título slider (*)</label>
+            <input type="text" class="form-control" id="titulo" name="titulo">
+        </div>
+        <div class="mb-3">
+            <label for="subtitulo" class="form-label colorPrimario">Subtitulo slider (*)</label>
+            <input type="text" class="form-control" id="subtitulo" name="subtitulo">
+        </div>
+        <!-- Button trigger modal -->
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            Agregar
+        </button>
+          <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Confirmación de envío de formulario</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    Confirma que deseas agregar un nuevo slider
+                </div>
+                <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                <button type="submit" class="btn btn-primary">Confirmar nuevo slider</button>
+                </div>
+            </div>
+            </div>
+        </div>
+    </form>
+</main>
+{% endblock %}

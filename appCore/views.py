@@ -5,7 +5,8 @@ from .models import Slider, Noticia, Jugador, ImagenJugador
 # Create your views here.
 
 def home(request):
-    objSlider = Slider.objects.all()
+    objSlider = Slider.objects.all().order_by('-idImagen')
+    max_id = objSlider[0].idImagen
     noticias = Noticia.objects.all()
 
     objJugador = Jugador.objects.all().order_by('-genero','apaterno')
@@ -14,7 +15,8 @@ def home(request):
     datos = {
         'sliders' : objSlider,
         'noticias': noticias,
-        'jugadores':objJugador
+        'jugadores':objJugador,
+        'maxId':max_id
         }
 
     return render(request, 'appCore/home.html', datos)

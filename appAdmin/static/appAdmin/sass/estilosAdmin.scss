@@ -62,6 +62,20 @@ header {
 
 main {
     width: 100%;
+    .cajaSliderModif {
+        border: 1px solid #bebebe;
+        border-radius: 5px;
+        width: 90%;
+        margin: 50px auto;
+        padding: 20px;
+        .cajaImg {
+            width: 100%;
+            margin-bottom: 20px;
+            img {
+                width: 100%;
+            }
+        }
+    }
     .cajaAgregImg {
         h1 {
             margin-top: 20px;
@@ -237,6 +251,22 @@ main {
         }
     }
     main {
+        .cajaSliderModif {
+            width: 100%;
+            margin: 40px auto;
+            padding: 5px;
+            .cajaImg {
+                width: 100%;
+                margin-bottom: 20px;
+                img {
+                    width: 100%;
+                }
+            }
+            form {
+                width: 90%;
+                margin: auto;
+            }
+        }
         .cajaAgregImg {
             .cajaImagenesAgregImgs {
                 padding: 10px;

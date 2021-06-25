@@ -3,8 +3,8 @@ from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import get_user
 
-from appCore.models import Jugador, ImagenJugador
-from appCore.forms import JugadorForm, ImagenJugadorForm
+from appCore.models import Jugador, ImagenJugador, Slider
+from appCore.forms import JugadorForm, ImagenJugadorForm, SliderForm
 
 # Create your views here.
 
@@ -50,11 +50,11 @@ def administradorModif(request, pk):
 @login_required
 def administradorAgreg(request):
 
-    jugadaor = JugadorForm()
+    jugador = JugadorForm()
     mensaje = ''
 
     datos = { 
-        'form': jugadaor,
+        'form': jugador,
         'mensaje':mensaje
         }
 
@@ -71,10 +71,64 @@ def administradorAgreg(request):
             else:
                 datos['mensaje'] = "Recuerda que debes cargar la imagen de Portada del jugador"
     except:
-        datos['mensaje'] = "Categoria editada correctamente"
+        datos['mensaje'] = "Error al cargar nuevo jugador"
 
     return render(request, 'appAdmin/administradorAgreg.html', datos)
 
+@login_required
+def slidersAgreg(request):
+    slider = Slider.objects.all()
+    mensaje = ''
+    datos = { 
+        'mensaje':mensaje
+        }
+
+    if request.method == 'POST':
+        print(request.POST)
+        if request.FILES:
+            formu = SliderForm(request.POST, request.FILES)
+            if formu.is_valid():
+                formu.save()
+                datos['mensaje'] = "Categoria editada correctamente"
+                #return redirect(to='administrador')
+            else:
+                datos['mensaje'] = "Recuerda que debes completar los campos con *"
+
+        else:
+            datos['mensaje'] = "Recuerda que debes cargar la imagen del slider"
+    
+    return render(request, 'appAdmin/slidersAgreg.html', datos)
+
+@login_required
+def slidersModif(request):
+
+    sliders = Slider.objects.all().order_by('idImagen')
+
+    datos = {
+        'sliders':sliders,
+        'mensaje':''
+    }
+
+    if request.method == 'POST':
+        pk = request.POST['idImagen']
+        mySlider = Slider.objects.get(idImagen = pk)
+        
+        formulario = SliderForm(request.POST, request.FILES, instance=mySlider)
+        if formulario.is_valid():
+            formulario.save()
+            datos['mensaje'] = 'Slider modificado correctamente'
+        else:
+            datos['mensaje'] = 'No se ha modificado el slider, no dejes campos sin contenido'
+
+    return render(request, 'appAdmin/slidersModif.html', datos)
+
+@login_required
+def sliderElim(request, pk):
+
+    slider = Slider.objects.get(idImagen = pk)
+    slider.delete()
+
+    return redirect(to='slidersModif')
 
 @login_required
 def administradorBorrar(request, pk):
@@ -127,7 +181,6 @@ def modificarImgPersonal(request, pk):
     }
 
     if request.method == 'POST':
-        print(request.POST)
         idImg = request.POST['idImagenJug']
         imagen = ImagenJugador.objects.get(idImagenJug = idImg)
         if request.POST['alt'] != '' and request.POST['title'] != '':
@@ -141,14 +194,25 @@ def modificarImgPersonal(request, pk):
     return render(request, 'appAdmin/modificarImgPersonal.html', datos)
 
 
+@login_required
+def eliminarImgPersonal(request, pk):
+    
+    img = ImagenJugador.objects.get(idImagenJug = pk)
+    img.delete()
+
+    return redirect(to='modificarImg')
 
 
 
 
-#si no carga una foto la llave 'imagenPortada' existira en el diccionario reques.POST
-#si carga una foto la llave 'imagenPortada' ya no existe en el reques.POST, sino que en el request.FILES
-#o que arroja error y cae en el except
-#try:
+
+
+
+
+
+
+
+
 """ if request.FILES == '':
     print('entre')
     #se actualizan solo los demas inputs aparte de la imagen 
@@ -175,5 +239,5 @@ def modificarImgPersonal(request, pk):
     #return redirect(to='administrador')
 
 #except:
-else: """
-#print('sali')
+else: 
+"""

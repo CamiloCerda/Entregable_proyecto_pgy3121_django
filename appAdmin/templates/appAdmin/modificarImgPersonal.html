@@ -60,6 +60,31 @@ Modificar imagenes
                     </div>
                 </div>
             </div>
+            <!-- Button trigger modal -->
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                data-bs-target="#modalEliminarImgs{{img.idImagenJug}}">
+                Eliminar
+            </button>
+            <!-- Modal -->
+            <div class="modal fade" id="modalEliminarImgs{{img.idImagenJug}}" tabindex="-1"
+                aria-labelledby="labelmodalEliminarImgs{{img.idImagenJug}}" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="labelmodalEliminarImgs{{img.idImagenJug}}">Confirmación de datos
+                            </h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            Vas a eliminar esta imagen, ¿Deseas continuar?
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No, cerrar</button>
+                            <a href="{% url 'eliminarImgPersonal' img.idImagenJug %}"><button type="button" class="btn btn-primary">Sí, eliminar</button></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </form>
     </div>
     {% endfor %}

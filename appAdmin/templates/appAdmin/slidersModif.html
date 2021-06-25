@@ -1,0 +1,98 @@
+{% extends 'appAdmin/baseAdmin.html' %}
+
+{% load static %}
+
+{% block pagina %}
+Eliminar Sliders
+{% endblock %}
+
+{% block main %}
+
+{% if mensaje == 'Slider modificado correctamente' %}
+<div class="alert alert-success mt-4 alert-dismissible fade show" role="alert">
+    {{mensaje}}
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+{% elif mensaje == 'No se ha modificado el slider, no dejes campos sin contenido' %}
+<div class="alert alert-danger mt-4 alert-dismissible fade show" role="alert">
+    {{mensaje}}
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+{% endif %}
+<main class="container">
+    {% for slider in sliders %}
+    <div class="cajaSliderModif">
+        <div class="cajaImg">
+            <img src="{{slider.imagen.url}}" alt="">
+        </div>
+        <form enctype="multipart/form-data" method="POST">
+            {% csrf_token %}
+            <div class="mb-3">
+                <label for="imagen" class="form-label colorPrimario">Carga una imagen en caso que quieras modificar la
+                    existente</label>
+                <input type="file" class="form-control" id="imagen" name="imagen">
+            </div>
+            <div class="mb-3">
+                <label for="titulo" class="form-label colorPrimario">Título slider (*)</label>
+                <input type="text" class="form-control" id="titulo" name="titulo" value="{{slider.titulo}}">
+            </div>
+            <div class="mb-3">
+                <label for="subtitulo" class="form-label colorPrimario">Subtitulo slider (*)</label>
+                <input type="text" class="form-control" id="subtitulo" name="subtitulo" value="{{slider.subtitulo}}">
+            </div>
+            <div class="mb-3">
+                <label for="idImagen" class="form-label colorPrimario">Identificador slider</label>
+                <input type="text" class="form-control" id="idImagen" name="idImagen" value="{{slider.idImagen}}"
+                    readonly>
+            </div>
+            <!-- Button trigger modal -->
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal{{slider.idImagen}}">
+                Modificar
+            </button>
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModal{{slider.idImagen}}" tabindex="-1" aria-labelledby="exampleModalLabel{{slider.idImagen}}"
+                aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel{{slider.idImagen}}">Confirmación de envío de formulario</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            Confirma que deseas modificar el slider
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No, cerrar</button>
+                            <button type="submit" class="btn btn-primary">Sí, confirmo</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Button trigger modal -->
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#eliminarModal{{slider.idImagen}}">
+                Eliminar
+            </button>
+            <!-- Modal -->
+            <div class="modal fade" id="eliminarModal{{slider.idImagen}}" tabindex="-1" aria-labelledby="eliminarModalLabel{{slider.idImagen}}"
+                aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="eliminarModalLabel{{slider.idImagen}}">Confirmación de envío de formulario</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            Confirma que deseas eliminar el slider
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No, cerrar</button>
+                            <a href="{% url 'sliderElim' slider.idImagen %}"><button type="button" class="btn btn-primary">Sí, confirmo</button></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+    {% endfor %}
+</main>
+{% endblock %}
