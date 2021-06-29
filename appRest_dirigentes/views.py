@@ -5,26 +5,25 @@ from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from rest_framework.parsers import JSONParser
 from django.views.decorators.csrf import csrf_exempt
-from appCore.models import Noticia
-from .serializers import NoticiaSerializer
-
+from appCore.models import Dirigente
+from .serializers import DirigenteSerializer
 # Create your views here.
 
 #@csrf_exempt
 @api_view(['GET','POST'])
-def lista_noticias(request):
+def lista_dirigentes(request):
     """ 
-    Lista de todas las noticias
+    Lista de todas las dirigentes
     """
     if request.method == 'GET':
-        noticia = Noticia.objects.all()
-        serializer = NoticiaSerializer(noticia, many=True)
+        dirigente = Dirigente.objects.all()
+        serializer = DirigenteSerializer(dirigente, many=True)
 
         return Response(serializer.data)
     
     elif request.method == 'POST':
         data = JSONParser().parse(request)
-        serializer = NoticiaSerializer(data=data)
+        serializer = DirigenteSerializer(data=data)
         if serializer.is_valid():
             serializer.save()
             return Response(serializer.data, status=status.HTTP_201_CREATED)
@@ -33,27 +32,27 @@ def lista_noticias(request):
 
 
 @api_view(['GET','PUT', 'DELETE'])
-def detalle_noticia(request, id):
+def detalle_dirigente(request, id):
     """ 
-    Get, update, delete de una noticia en particular
+    Get, update, delete de un dirigente en particular
     """
     try:
-        noticia = Noticia.objects.get(idNoticia = id)
-    except Noticia.DoesNotExist:
+        dirigente = Dirigente.objects.get(id_dirigente = id)
+    except Dirigente.DoesNotExist:
         return Response(status=status.HTTP_404_NOT_FOUND)
     
     if request.method == 'GET':
-        serializer = NoticiaSerializer(noticia)
+        serializer = DirigenteSerializer(dirigente)
         return Response(serializer.data)
     
     if request.method == 'PUT':
         data = JSONParser().parse(request)
-        serializer = NoticiaSerializer(noticia, data=data)
+        serializer = DirigenteSerializer(dirigente, data=data)
         if serializer.is_valid():
             serializer.save()
             return Response(serializer.data)
         else:
             return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
     elif request.method == 'DELETE':
-        noticia.delete()
+        dirigente.delete()
         return Response(status=status.HTTP_204_NO_CONTENT)
