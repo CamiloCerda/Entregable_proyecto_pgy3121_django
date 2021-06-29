@@ -74,3 +74,18 @@ class ImagenJugador(models.Model):
     
     def __str__(self):
         return f'{self.title}'
+
+class Dirigente(models.Model):
+    id_dirigente = models.AutoField(primary_key=True)
+    nombre = models.CharField(max_length=60)
+    apellido = models.CharField(max_length=60)
+    cargo = models.CharField(max_length=60)
+    club = models.CharField(max_length=60)
+
+    class Meta:
+        verbose_name = 'dirigente'
+        verbose_name_plural = 'dirigentes'
+
+    #def __str__(self):
+    #    return f'{self.nombre} {self.apellido}'
+    

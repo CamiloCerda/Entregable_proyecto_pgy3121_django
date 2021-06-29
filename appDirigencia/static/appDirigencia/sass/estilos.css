@@ -1,0 +1,36 @@
+body {
+  background-color: #e7978d; }
+  body h1 {
+    color: #555454; }
+  body header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between; }
+    body header .titulo h2 {
+      color: #555454; }
+    body header nav ul {
+      display: flex;
+      background-color: #3b3939; }
+      body header nav ul li {
+        list-style: none;
+        padding: 20px; }
+        body header nav ul li:hover {
+          transition: all 0.3s ease;
+          background-color: #636363; }
+        body header nav ul li a {
+          text-decoration: none;
+          font-size: 20px;
+          color: #c5c5c5; }
+          body header nav ul li a:hover {
+            color: #c5c5c5;
+            opacity: .7; }
+
+.vertical {
+  display: flex;
+  flex-direction: column;
+  align-items: center; }
+
+.resaltado {
+  color: #ffffff; }
+
+/*# sourceMappingURL=estilos.css.map */

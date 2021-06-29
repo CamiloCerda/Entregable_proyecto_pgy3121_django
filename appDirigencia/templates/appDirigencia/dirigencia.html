@@ -1,0 +1,45 @@
+{% extends 'appCore/base.html' %}
+
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'appDirigencia/sass/nuestrosJugadores.css' %}">
+<link rel="stylesheet" href="{% static 'appDirigencia/sass/directiva.css' %}">
+{% endblock %}
+
+{% block title %}
+    Directiva
+{% endblock %}
+
+{% block main %}
+<main>
+    <div class="header">
+        <h2>La estructura de nuestra asociación</h2>
+        <p>
+            Nuestra asociación está compuesta actualmente por 3 clubes. <span>Los rechazados</span>, que fue el club que dio origen
+            a nuestra asociación, <span>Club unidos por el tenis de mesa</span>, que se unió a nosotros en primera instancia en busca de 
+            lograr a la tan anasiada unión a la Federación chilena de tenis de mesa y, por último, <span>Club deportivo de tenis de mesa</span>. 
+            De esta manera, la estructura de nuestra asociación está compuesta de la siguiente forma:
+        </p>
+    </div>
+    <div class="contenido">
+        {% for fila in info %}
+        <div class="cajaImpar">
+            <h3>"{{fila.club}}"</h3>
+            <div class="cargo impar">
+                <h4>Presidente</h4>
+                <p>{{fila.presidente}}</p>
+            </div>
+            <div class="cargo par">
+                <h4>Secretario</h4>
+                <p>{{fila.secretario}}</p>
+            </div>
+            <div class="cargo impar">
+                <h4>Tesorero</h4>
+                <p>{{fila.tesorero}}</p>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</main>
+{% endblock %}

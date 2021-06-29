@@ -42,6 +42,9 @@ INSTALLED_APPS = [
     'appPaginaPersonal',
     'appAdmin',
     'appJugadores',
+    'rest_framework',
+    'appRest_noticia',
+    'appDirigencia',
 ]
 
 MIDDLEWARE = [
