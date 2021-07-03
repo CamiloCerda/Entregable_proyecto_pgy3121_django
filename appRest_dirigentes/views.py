@@ -7,10 +7,18 @@ from rest_framework.parsers import JSONParser
 from django.views.decorators.csrf import csrf_exempt
 from appCore.models import Dirigente
 from .serializers import DirigenteSerializer
+
+# para realizar la autenticacion
+from rest_framework.decorators import permission_classes
+from rest_framework.authentication import TokenAuthentication
+from rest_framework.permissions import IsAuthenticated
+
 # Create your views here.
 
 #@csrf_exempt
+
 @api_view(['GET','POST'])
+@permission_classes((IsAuthenticated,))
 def lista_dirigentes(request):
     """ 
     Lista de todas las dirigentes
@@ -31,7 +39,9 @@ def lista_dirigentes(request):
             return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
+
 @api_view(['GET','PUT', 'DELETE'])
+@permission_classes((IsAuthenticated,))
 def detalle_dirigente(request, id):
     """ 
     Get, update, delete de un dirigente en particular

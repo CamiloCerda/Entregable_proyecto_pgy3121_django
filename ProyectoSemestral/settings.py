@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'appDirigencia',
     'appRest_dirigentes',
+    'rest_framework.authtoken',
 ]
 
 MIDDLEWARE = [
@@ -144,4 +145,8 @@ LOGIN_REDIRECT_URL = 'home'
 LOGOUT_REDIRECT_URL = 'home'
 
 
-#hola
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework.authentication.TokenAuthentication',
+    ],
+}
