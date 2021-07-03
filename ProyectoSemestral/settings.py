@@ -43,7 +43,6 @@ INSTALLED_APPS = [
     'appAdmin',
     'appJugadores',
     'rest_framework',
-    'appRest_noticia',
     'appDirigencia',
     'appRest_dirigentes',
 ]

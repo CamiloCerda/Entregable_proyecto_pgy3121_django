@@ -24,7 +24,6 @@ urlpatterns = [
     path('', include('appPaginaPersonal.urls')),
     path('', include('appAdmin.urls')),
     path('', include('appJugadores.urls')),
-    path('api/', include('appRest_noticia.urls')),
     path('', include('appDirigencia.urls')),
     path('api/', include('appRest_dirigentes.urls')),
 ]
