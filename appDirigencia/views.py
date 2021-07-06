@@ -23,12 +23,13 @@ def dirigencia(request):
 
     listaClubesJSON = []
     for nombreClub, datosDirigentes in datosClub.items():
-        listaClubesJSON.append({
-            'club':nombreClub, 
-            'presidente':datosDirigentes[0],
-            'secretario':datosDirigentes[2],
-            'tesorero':datosDirigentes[4]
-            })
+        if len(datosDirigentes) == 6:
+            listaClubesJSON.append({
+                'club':nombreClub, 
+                'presidente':datosDirigentes[0],
+                'secretario':datosDirigentes[2],
+                'tesorero':datosDirigentes[4]
+                })
 
     datos = {
         'info' : listaClubesJSON
